@@ -1,0 +1,586 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card card-plain">
+                  <div class="card-header d-flex align-items-center card-header-danger">
+                      <h4 class="card-title mt-0">Applications WL OIaas</h4>
+                      <button class=" btn   icon-button ">
+                        <i class="material-icons  ">add</i>
+                       
+                      </button>
+                      <p class="card-category"> </p>
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table table-hover">
+                              <thead class="">
+                                  <th rowspan="2">
+                                       
+                                    </th>
+                                    <th rowspan="2" >
+                                      Deployment Year 
+                                    </th>
+                                    <th Colspan="2">
+                                        Basic Compute 
+                                        <tr>
+                                        <td >
+                                          vCPU
+                                        </td>
+                                        <td>
+                                          vRAM
+                                        </td>
+                                      </tr>
+                                    </th>
+                                    <th Colspan="2">
+                                      Basic Compute NG 
+                                      <tr>
+                                      <td >
+                                        vCPU
+                                      </td>
+                                      <td>
+                                        vRAM
+                                      </td>
+                                    </tr>
+                                  </th>
+                                  <th Colspan="2">
+                                    Intensive Compute 
+                                    <tr>
+                                    <td >
+                                      vCPU
+                                    </td>
+                                    <td>
+                                      vRAM
+                                    </td>
+                                  </tr>
+                                </th>
+                                    
+                                    <th rowspan="2">
+                                      Perfermane Storage(TB)
+                                    </th>
+                                    <th rowspan="2">
+                                      Capacity Storage(TB)
+                                    </th>
+                                     <th rowspan="2">
+                                      App. Hypothesys
+                                        
+                                     </th>
+                                     
+                                
+                                
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let a of apps">
+                                        <td >
+                                            {{a.name}} 
+                                        </td>
+                                        <td >
+                                          {{a.annee}}
+                                        </td>
+                                        <td>
+                                          {{a.bcVcpu}}
+                                        </td>
+                                        <td >
+                                          {{a.bcRam}}
+                                        </td>
+                                        <td >
+                                          {{a.bcNgVcpu}}
+                                      </td>
+                                        <td>
+                                          {{a.bcNgRam}}
+                                        </td>
+                                        <td>
+                                          {{a.icVcpuU}}
+                                        </td>
+                                        <td>
+                                          {{a.icRam}}
+                                        </td>
+                                        
+                                        <td>
+                                          {{a.perfStrorage}}
+                                        </td>
+                                        <td>
+                                          {{a.capaStorage}}
+                                        </td>
+                                        <td>
+                                          {{a.Hypothesys}}
+                                        </td>
+                                        
+                                        
+                                    </tr>
+                                    
+                                </tbody>
+                          </table>
+                        
+                      
+                    
+                  
+                
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-12">
+                <div class="card card-plain">
+                    <div class="card-header d-flex align-items-center card-header-danger">
+                        <h4 class="card-title mt-0">Applications WL Local Paas</h4>
+                        <button class=" btn   icon-button ">
+                          <i class="material-icons  ">add</i>
+                         
+                        </button>
+                        <p class="card-category"> </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="">
+                                    <th rowspan="2">
+                                         
+                                      </th>
+                                      <th rowspan="2" >
+                                        Deployment Year 
+                                      </th>
+                                      <th Colspan="2">
+                                          Basic Compute 
+                                          <tr>
+                                          <td >
+                                            vCPU
+                                          </td>
+                                          <td>
+                                            vRAM
+                                          </td>
+                                        </tr>
+                                      </th>
+                                      <th Colspan="2">
+                                        Basic Compute NG 
+                                        <tr>
+                                        <td >
+                                          vCPU
+                                        </td>
+                                        <td>
+                                          vRAM
+                                        </td>
+                                      </tr>
+                                    </th>
+                                    <th Colspan="2">
+                                      Intensive Compute 
+                                      <tr>
+                                      <td >
+                                        vCPU
+                                      </td>
+                                      <td>
+                                        vRAM
+                                      </td>
+                                    </tr>
+                                  </th>
+                                      
+                                      <th rowspan="2">
+                                        Perfermane Storage(TB)
+                                      </th>
+                                      <th rowspan="2">
+                                        Capacity Storage(TB)
+                                      </th>
+                                       <th rowspan="2">
+                                        App. Hypothesys
+                                          
+                                       </th>
+                                       
+                                  
+                                  
+                                  </thead>
+                                  <tbody>
+                                      <tr>
+                                          <td >
+                                            Local Paas Infra & CS    
+                                          </td>
+                                          <td >
+                                            
+                                          </td>
+                                          <td >
+                                            
+                                          </td>
+                                          <td >
+                                            
+                                        </td>
+                                          <td>
+                                              96
+                                          </td>
+                                          <td>
+                                              480
+                                          </td>
+                                          <td>
+                                              
+                                          </td>
+                                          <td>
+                                              
+                                          </td>
+                                          <td>
+                                              6820
+                                          </td>
+                                          <td>
+                                              
+                                          </td>
+                                          <td>
+                                              
+                                          </td>
+                                          
+                                          
+                                      </tr>
+                                      <tr>
+                                        <td >
+                                          Local Paas Flavors capacity    
+                                        </td>
+                                        <td >
+                                          
+                                        </td>
+                                        <td >
+                                          
+                                        </td>
+                                        <td >
+                                          
+                                      </td>
+                                        <td>
+                                            8
+                                        </td>
+                                        <td>
+                                            32
+                                        </td>
+                                        <td>
+                                            
+                                        </td>
+                                        <td>
+                                            
+                                        </td>
+                                        <td>
+                                            200
+                                        </td>
+                                        <td>
+                                            
+                                        </td>
+                                        <td>
+                                            Flavor capacity
+                                        </td>
+                                        
+                                        
+                                    </tr>
+                                      
+                                  </tbody>
+                            </table>
+                          
+                        
+                      
+                    
+                  
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="card card-plain">
+                      <div class="card-header d-flex align-items-center card-header-danger">
+                          <h4 class="card-title mt-0">Applications to be hosted on Local Paas </h4>
+                          <button class=" btn   icon-button ">
+                            <i class="material-icons  ">add</i>
+                           
+                          </button>
+                          <p class="card-category"> </p>
+                      </div>
+                      <div class="card-body">
+                          <div class="table-responsive">
+                              <table class="table table-hover">
+                                  <thead class="">
+                                      <th rowspan="2">
+                                           
+                                        </th>
+                                        <th rowspan="2" >
+                                          Deployment Year 
+                                        </th>
+                                        <th Colspan="2">
+                                            Basic Compute 
+                                            <tr>
+                                            <td >
+                                              vCPU
+                                            </td>
+                                            <td>
+                                              vRAM
+                                            </td>
+                                          </tr>
+                                        </th>
+                                        <th Colspan="2">
+                                          Basic Compute NG 
+                                          <tr>
+                                          <td >
+                                            vCPU
+                                          </td>
+                                          <td>
+                                            vRAM
+                                          </td>
+                                        </tr>
+                                      </th>
+                                      <th Colspan="2">
+                                        Intensive Compute 
+                                        <tr>
+                                        <td >
+                                          vCPU
+                                        </td>
+                                        <td>
+                                          vRAM
+                                        </td>
+                                      </tr>
+                                    </th>
+                                        
+                                        <th rowspan="2">
+                                          Perfermane Storage(TB)
+                                        </th>
+                                        <th rowspan="2">
+                                          Capacity Storage(TB)
+                                        </th>
+                                         <th rowspan="2">
+                                          App. Hypothesys
+                                            
+                                         </th>
+                                         
+                                    
+                                    
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td >
+                                                  
+                                            </td>
+                                            <td >
+                                              
+                                            </td>
+                                            <td >
+                                              
+                                            </td>
+                                            <td >
+                                              
+                                          </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            
+                                            
+                                        </tr>
+                                        
+                                        
+                                    </tbody>
+                              </table>
+                            
+                          
+                        
+                      
+                    
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="card card-plain">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title mt-0">Resource Availabily </h4>
+                            <p class="card-category"> </p>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead class="">
+                                        <th rowspan="2">
+                                             
+                                          </th>
+                                          <th rowspan="2" >
+                                            Deployment Year 
+                                          </th>
+                                          <th Colspan="2">
+                                              Basic Compute 
+                                              <tr>
+                                              <td >
+                                                vCPU
+                                              </td>
+                                              <td>
+                                                vRAM
+                                              </td>
+                                            </tr>
+                                          </th>
+                                          <th Colspan="2">
+                                            Basic Compute NG 
+                                            <tr>
+                                            <td >
+                                              vCPU
+                                            </td>
+                                            <td>
+                                              vRAM
+                                            </td>
+                                          </tr>
+                                        </th>
+                                        <th Colspan="2">
+                                          Intensive Compute 
+                                          <tr>
+                                          <td >
+                                            vCPU
+                                          </td>
+                                          <td>
+                                            vRAM
+                                          </td>
+                                        </tr>
+                                      </th>
+                                          
+                                          <th rowspan="2">
+                                            Perfermane Storage(TB)
+                                          </th>
+                                          <th rowspan="2">
+                                            Capacity Storage(TB)
+                                          </th>
+                                           <th rowspan="2">
+                                            App. Hypothesys
+                                              
+                                           </th>
+                                           
+                                      
+                                      
+                                      </thead>
+                                      <tbody>
+                                          <tr>
+                                              <td >
+                                                    Total Current resources
+                                              </td>
+                                              <td >
+                                                
+                                              </td>
+                                              <td >
+                                                
+                                              </td>
+                                              <td >
+                                                
+                                            </td>
+                                              <td>
+                                                  
+                                              </td>
+                                              <td>
+                                                  
+                                              </td>
+                                              <td>
+                                                  
+                                              </td>
+                                              <td>
+                                                  
+                                              </td>
+                                              <td>
+                                                  
+                                              </td>
+                                              <td>
+                                                  
+                                              </td>
+                                              <td>
+                                                  
+                                              </td>
+                                              
+                                              
+                                          </tr>
+                                          <tr>
+                                            <td >
+                                              Total current WL
+                                            </td>
+                                            <td >
+                                              
+                                            </td>
+                                            <td >
+                                              
+                                            </td>
+                                            <td >
+                                              
+                                          </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            
+                                            
+                                        </tr>
+                                        <tr>
+                                          <td >
+                                            Available Ressources
+                                          </td>
+                                          <td >
+                                            
+                                          </td>
+                                          <td >
+                                            
+                                          </td>
+                                          <td >
+                                            
+                                        </td>
+                                          <td>
+                                              
+                                          </td>
+                                          <td>
+                                              
+                                          </td>
+                                          <td>
+                                              
+                                          </td>
+                                          <td>
+                                              
+                                          </td>
+                                          <td>
+                                              
+                                          </td>
+                                          <td>
+                                              
+                                          </td>
+                                          <td>
+                                              
+                                          </td>
+                                          
+                                          
+                                      </tr>
+                                          
+                                          
+                                      </tbody>
+                                </table>
+                              
+                            
+                          
+                        
+                      
+                            </div>
+                        </div>
+                    </div>
+          
+          
+      </div>
+  </div>
+</div>

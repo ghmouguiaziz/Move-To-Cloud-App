@@ -1,0 +1,97 @@
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title gras ">Pick Your Data Center </h4>
+                        <p class="card-category"> </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table centered-cell">
+                                <thead >
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                            
+                                </thead>
+                                <tbody>
+                                    <tr class="gras">
+                                        <td>
+                                        Zone: 
+                                        </td>
+
+                                    
+                                        <td>
+                                          
+  
+                                          <select id="SelectZone"  class="custom-select" [(ngModel)]="zone" > 
+                                              <option *ngFor="let z of zones">{{z.name}}</option>
+                                              
+                                          </select> 
+                                          
+                                        </td>
+                                        <td>
+                                            <div class="col-md-4">
+                                                <button mat-raised-button class="btn btn-danger btn-block" type="button" (click)="getAffiliates(zone)" >Confirm</button>
+                                             </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="gras">
+                                          Affiliate:
+                                        </td>
+                                        <td class="gras">
+                                            <select id="SelectZone" class="custom-select" [(ngModel)]="aff"> 
+                                                <option *ngFor="let a of affs"> {{a.name}}</option>
+                                                
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <div class="col-md-4">
+                                                <button mat-raised-button class="btn btn-danger btn-block" type="button" (click)="getDataCenters(aff)" >Confirm</button>
+                                             </div>
+                                        </td>
+                                        
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td  class="gras">
+                                          Data Center:
+                                        </td>
+                                        <td class="gras">
+                                            <select id="SelectZone" class="custom-select" [(ngModel)]="data"> 
+                                                <option *ngFor="let d of datacenters">{{d.name}} </option>
+                                                
+                                            </select>
+                                        </td>
+                                        <td>
+                                            
+                                        </td>
+                                        
+                                    </tr>
+                                    <tr class="centered-cell">
+                                        <td></td>
+                                        <td>
+                                         <div class="col-md-4">
+                                            <button mat-raised-button class="btn btn-danger btn-block" type="button" (click)="confirm()" >Confirm</button>
+                                         </div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    
+                                    
+                                </tbody>
+                            </table>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+  </div>
+  

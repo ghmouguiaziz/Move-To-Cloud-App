@@ -1,0 +1,213 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-plain">
+                    <div class="card-header d-flex align-items-center card-header-danger">
+                        <h4 class="card-title  mt-0">Compute Servers</h4>
+                        <button class=" btn   icon-button ">
+                          <i class="material-icons  ">add</i>
+                         
+                        </button>
+                        <p class="card-category"> </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="">
+                                    <th>
+                                        CPU(Cores number)
+                                      </th>
+                                      <th>
+                                        Class Of Compute 
+                                      </th>
+                                      <th>
+                                          CPU(physical cores) 
+                                      </th>
+                                      <th>
+                                        Nova RAM(Gb)
+                                      </th>
+                                      <th>
+                                        Max vCPU for VM
+                                      </th>
+                                      <th>
+                                        Max vRAM for VM
+                                      </th>
+                                      <th>
+                                          SFPs
+                                          
+                                       </th>
+                                       
+                                  
+                                  
+                                  </thead>
+                                  <tbody>
+                                      <tr *ngFor="let c of computes">
+                                          <td >
+                                            {{c.cpu}}
+                                          </td>
+                                          <td >
+                                            {{c.classOfCompute}}
+                                          </td>
+                                          <td>
+                                            {{c.cpuPc}}
+                                          </td>
+                                          <td >
+                                            {{c.ram}}
+                                          </td>
+                                          <td >
+                                            {{c.maxvcpu}}
+                                        </td>
+                                          <td>
+                                            {{c.maxvram}}
+                                          </td>
+                                          <td>
+                                            {{c.sfps}}
+                                          </td>
+                                          
+                                          
+                                          
+                                      </tr>
+                                      
+                                  </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            
+            <div class="col-md-12">
+                <div class="card card-plain">
+                    <div class="card-header d-flex align-items-center card-header-danger">
+                        <h4 class="card-title mt-0"> Storage Servers</h4>
+                        <button class=" btn   icon-button ">
+                          <i class="material-icons  ">add</i>
+                         
+                        </button>
+                        <p class="card-category"> </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="">
+                                    <th>
+                                        Range 
+                                      </th>
+                                      <th >
+                                        Class Of Compute 
+                                      </th>
+                                      <th>
+                                          Disk Number 
+                                      </th>
+                                      <th>
+                                        Disk volume(Gb)
+                                      </th>
+                                      <th>
+                                        Volume Brut
+                                      </th>
+                                      <th>
+                                        Volume Net
+                                      </th>
+                                      <th>
+                                          SFPs
+                                          
+                                       </th>
+                                       
+                                  
+                                  
+                                  </thead>
+                                  <tbody>
+                                      <tr>
+                                          <td >
+                                            2
+                                          </td>
+                                          <td >
+                                            Capacity Storage Nodes
+                                          </td>
+                                          <td >
+                                            12
+                                          </td>
+                                          <td >
+                                            8000
+                                        </td>
+                                          <td>
+                                              96000
+                                          </td>
+                                          <td>
+                                              24000
+                                          </td>
+                                          <td>
+                                              4
+                                          </td>
+                                          
+                                          
+                                      </tr>
+                                      
+                                  </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card card-plain">
+                    <div class="card-header d-flex align-items-center card-header-danger">
+                        <h4 class="card-title mt-0"> Control and Network Servers</h4>
+                        <button class=" btn   icon-button ">
+                          <i class="material-icons  ">add</i>
+                         
+                        </button>
+                        <p class="card-category"> </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="">
+                                    
+                                      <th>
+                                        Class Of Compute 
+                                      </th>
+                                      
+                                      <th>
+                                        SFPs
+                                      </th>
+                                      
+                                       
+                                         
+                                       
+                                       
+                                  
+                                  
+                                  </thead>
+                                  <tbody>
+                                      <tr>
+                                          <td >
+                                            Control Node
+                                          </td>
+                                          <td >
+                                            4
+                                          </td>
+                                          
+                                    
+                                          
+                                      </tr>
+                                      <tr>
+                                        <td >
+                                          Network Node
+                                        </td>
+                                        <td >
+                                          6
+                                        </td>
+                                        
+                                        
+                                    </tr>
+                                      
+                                  </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
