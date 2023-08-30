@@ -5,16 +5,13 @@
                 <div class="card card-plain">
                     <div class="card-header d-flex align-items-center card-header-danger">
                         <h4 class="card-title  mt-0">Compute Servers</h4>
-                        <button class=" btn   icon-button ">
-                          <i class="material-icons  ">add</i>
-                         
-                        </button>
+                        
                         <p class="card-category"> </p>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-hover">
-                                <thead class="">
+                                <thead class="centered-cell">
                                     <th>
                                         CPU(Cores number)
                                       </th>
@@ -37,12 +34,18 @@
                                           SFPs
                                           
                                        </th>
+                                       <th>
+                                        <button class=" btn centered-cell  btn-gray btn-sm icon-button " colspan="2" data-toggle="modal" data-target="#myModal">
+                                          <i class="material-icons  ">add</i>
+                                         
+                                        </button>
+                                       </th>
                                        
                                   
                                   
                                   </thead>
                                   <tbody>
-                                      <tr *ngFor="let c of computes">
+                                      <tr *ngFor="let c of computes" class="centered-cell">
                                           <td >
                                             {{c.cpu}}
                                           </td>
@@ -65,6 +68,10 @@
                                             {{c.sfps}}
                                           </td>
                                           
+                                            <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModaldel">Delete</button></td>
+                                             <td><button class="btn btn-warning btn-sm mx-2" data-toggle="modal" data-bs-target="#basicModal2" (click)="update(hr)" >Edit</button></td>
+                                          
+                                          
                                           
                                           
                                       </tr>
@@ -74,7 +81,91 @@
                         </div>
                     </div>
                 </div>
-            
+
+                <div class="modal fade" id="myModaldel">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                    
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title gras">Delete?</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                        <button type="button" class="btn btn-secondary" >yes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade" id="myModal">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                    
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title centered-cell gras">New Compute</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+                      
+                      <!-- Modal Body -->
+                      <div class="modal-body">
+                        <div class="col-md-6" class="form-outline mb-4">
+                          <mat-form-field class="example-full-width">
+                          <input matInput  type="text" [(ngModel)]="newcompute.classOfCompute" [ngModelOptions]="{standalone: true}" placeholder="classOfCompute" />
+                        </mat-form-field>
+                        </div>
+                        <div class="col-md-6" class="form-outline mb-4">
+                          <mat-form-field class="example-full-width">
+                          <input matInput  type="number" [(ngModel)]="newcompute.cpu" [ngModelOptions]="{standalone: true}" placeholder="CPU" />
+                        </mat-form-field>
+                        </div>
+                        
+                        <div class="col-md-6" class="form-outline mb-4">
+                          <mat-form-field class="example-full-width">
+                          <input matInput  type="number" [(ngModel)]="newcompute.cpuPc" [ngModelOptions]="{standalone: true}" placeholder="CPU(physical cores)" />
+                        </mat-form-field>
+                        </div>
+                        <div class="col-md-6" class="form-outline mb-4">
+                          <mat-form-field class="example-full-width">
+                          <input matInput  type="number" [(ngModel)]="newcompute.ram" [ngModelOptions]="{standalone: true}" placeholder="RAM" />
+                        </mat-form-field>
+                        </div>
+                        <div class="col-md-6" class="form-outline mb-4">
+                          <mat-form-field class="example-full-width">
+                          <input matInput  type="number" [(ngModel)]="newcompute.maxvcpu" [ngModelOptions]="{standalone: true}" placeholder="Max vCPU" />
+                        </mat-form-field>
+                        </div>
+                        <div class="col-md-6" class="form-outline mb-4">
+                          <mat-form-field class="example-full-width">
+                          <input matInput  type="number" [(ngModel)]="newcompute.maxvram" [ngModelOptions]="{standalone: true}" placeholder="Max RAM" />
+                        </mat-form-field>
+                        </div>
+                        <div class="col-md-6" class="form-outline mb-4">
+                          <mat-form-field class="example-full-width">
+                          <input matInput  type="number" [(ngModel)]="newcompute.sfps" [ngModelOptions]="{standalone: true}" placeholder="SFPs" />
+                        </mat-form-field>
+                        </div>
+                      </div>
+                      
+                      <!-- Modal Footer -->
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" (click)="addCompute()" >Add</button>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Add Bootstrap JS and jQuery scripts -->
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                
+                
+              </div>
+                
             <div class="col-md-12">
                 <div class="card card-plain">
                     <div class="card-header d-flex align-items-center card-header-danger">

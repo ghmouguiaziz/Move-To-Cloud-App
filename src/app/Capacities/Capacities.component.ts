@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import { ComputeCapacities } from 'app/Models/ComputeCapacities.model';
 import { CapacitiesService } from 'app/Services/capacities.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { CapacitiesService } from 'app/Services/capacities.service';
 })
 export class CapacitiesComponent implements OnInit {
 computes:any;
+newcompute=new ComputeCapacities();
   constructor(private CapacitiesService : CapacitiesService ) { }
 
   ngOnInit(): void {
@@ -22,6 +24,13 @@ computes:any;
         this.computes=res, console.log(this.computes);
       }
     ); 
+  }
+  addCompute(){
+    
+    this.CapacitiesService.addCompute(this.newcompute).subscribe()
+    
+    window.location.reload()
+    console.log(this.newcompute)
   }
 
 }

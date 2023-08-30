@@ -11,4 +11,9 @@ export class CapacitiesService {
   public getComputesCapa(): Observable <ComputeCapacities> {
     return this.http.get<ComputeCapacities> (`http://localhost:8090/data/getAllComputeCapacities`);
 }
+addCompute(c:any){
+  return this.http.post('http://localhost:8090/data/addComputeCapacities', c) ;
+}
+
+
 }
