@@ -35,7 +35,7 @@
                                           
                                        </th>
                                        <th>
-                                        <button class=" btn centered-cell  btn-gray btn-sm icon-button " colspan="2" data-toggle="modal" data-target="#myModal">
+                                        <button class=" btn centered-cell  btn-gray btn-sm icon-button " colspan="2" data-toggle="modal" data-target="#myModalnewcompute">
                                           <i class="material-icons  ">add</i>
                                          
                                         </button>
@@ -67,9 +67,24 @@
                                           <td>
                                             {{c.sfps}}
                                           </td>
-                                          
-                                            <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModaldel">Delete</button></td>
-                                             <td><button class="btn btn-warning btn-sm mx-2" data-toggle="modal" data-bs-target="#basicModal2" (click)="update(hr)" >Edit</button></td>
+                                          <div class="modal fade" id="myModaldeldeletecompute" tabindex="-1" >
+                                            <div class="modal-dialog">
+                                              <div class="modal-content">
+                                              
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                  <h4 class="modal-title gras">Delete?</h4>
+                                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                                                  <button type="button" class="btn btn-secondary" (click)="DeleteCompute(idC)" >yes</button>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                            <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModaldeldeletecompute" (click)="getidC(c.idComputeCapacities)" >Delete</button></td>
+                                             <td><button class="btn btn-warning btn-sm mx-2" data-toggle="modal" data-bs-target="#basicModal2"  >Edit</button></td>
                                           
                                           
                                           
@@ -82,23 +97,8 @@
                     </div>
                 </div>
 
-                <div class="modal fade" id="myModaldel">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                    
-                      <!-- Modal Header -->
-                      <div class="modal-header">
-                        <h4 class="modal-title gras">Delete?</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                        <button type="button" class="btn btn-secondary" >yes</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal fade" id="myModal">
+                
+                <div class="modal fade" id="myModalnewcompute">
                   <div class="modal-dialog">
                     <div class="modal-content">
                     
@@ -151,7 +151,7 @@
                       <!-- Modal Footer -->
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" (click)="addCompute()" >Add</button>
+                        <button type="button" class="btn btn-secondary" (click)="addCompute()" >Add</button>
                       </div>
                       
                     </div>
@@ -165,15 +165,13 @@
                 
                 
               </div>
-                
+             
+            
             <div class="col-md-12">
                 <div class="card card-plain">
                     <div class="card-header d-flex align-items-center card-header-danger">
                         <h4 class="card-title mt-0"> Storage Servers</h4>
-                        <button class=" btn   icon-button ">
-                          <i class="material-icons  ">add</i>
-                         
-                        </button>
+                        
                         <p class="card-category"> </p>
                     </div>
                     <div class="card-body">
@@ -201,34 +199,64 @@
                                       <th>
                                           SFPs
                                           
-                                       </th>
+                                          <th>
+                                            <button class=" btn centered-cell  btn-gray btn-sm icon-button " colspan="2" data-toggle="modal" data-target="#myModalnewstorage">
+                                              <i class="material-icons  ">add</i>
+                                             
+                                            </button>
+                                           </th>
+                                       
+                                      
+                                      
                                        
                                   
                                   
                                   </thead>
                                   <tbody>
-                                      <tr>
+                                      <tr *ngFor=" let s of storages">
                                           <td >
-                                            2
+                                            {{s.classOfStorage}}
                                           </td>
                                           <td >
-                                            Capacity Storage Nodes
+                                            {{s.rnge}}
                                           </td>
                                           <td >
-                                            12
+                                            {{s.diskNumber}}
                                           </td>
                                           <td >
-                                            8000
+                                            {{s.diskVolume}}
                                         </td>
                                           <td>
-                                              96000
+                                              {{s.volumeBrut}}
                                           </td>
                                           <td>
-                                              24000
+                                              {{s.volumeNet}}
                                           </td>
                                           <td>
-                                              4
+                                              {{s.sfps}}
                                           </td>
+                                          <div class="modal fade" id="myModaldeldeletestorage">
+                                            <div class="modal-dialog">
+                                              <div class="modal-content">
+                                              
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                  <h4 class="modal-title gras">Delete?</h4>
+                                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                                                  <button type="button" class="btn btn-secondary"  (click)="deleteStorage(idS)" >yes</button>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                            <td>
+                                              <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModaldeldeletestorage" (click)="getidS(s.idStorageCapacities)">Delete</button>
+                                            </td>
+                                             <td>
+                                              <button class="btn btn-warning btn-sm mx-2" data-toggle="modal" data-bs-target="#basicModal2" (click)="update(hr)" >Edit</button>
+                                            </td>
                                           
                                           
                                       </tr>
@@ -238,15 +266,80 @@
                         </div>
                     </div>
                 </div>
+            
+            <div class="modal fade" id="myModalnewstorage">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title centered-cell gras">New Storage</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  
+                  <!-- Modal Body -->
+                  <div class="modal-body">
+                    <div class="col-md-6" class="form-outline mb-4">
+                      <mat-form-field class="example-full-width">
+                      <input matInput  type="text" [(ngModel)]="newstorage.classOfStorage" [ngModelOptions]="{standalone: true}" placeholder="class Of Storage" />
+                    </mat-form-field>
+                    </div>
+                    <div class="col-md-6" class="form-outline mb-4">
+                      <mat-form-field class="example-full-width">
+                      <input matInput  type="number" [(ngModel)]="newstorage.rnge" [ngModelOptions]="{standalone: true}" placeholder="Range" />
+                    </mat-form-field>
+                    </div>
+                    
+                    <div class="col-md-6" class="form-outline mb-4">
+                      <mat-form-field class="example-full-width">
+                      <input matInput  type="number" [(ngModel)]="newstorage.diskNumber" [ngModelOptions]="{standalone: true}" placeholder="Disk Number" />
+                    </mat-form-field>
+                    </div>
+                    <div class="col-md-6" class="form-outline mb-4">
+                      <mat-form-field class="example-full-width">
+                      <input matInput  type="number" [(ngModel)]="newstorage.diskVolume" [ngModelOptions]="{standalone: true}" placeholder="Disk Volume" />
+                    </mat-form-field>
+                    </div>
+                    <div class="col-md-6" class="form-outline mb-4">
+                      <mat-form-field class="example-full-width">
+                      <input matInput  type="number" [(ngModel)]="newstorage.volumeBrut" [ngModelOptions]="{standalone: true}" placeholder="Volume Brut" />
+                    </mat-form-field>
+                    </div>
+                    <div class="col-md-6" class="form-outline mb-4">
+                      <mat-form-field class="example-full-width">
+                      <input matInput  type="number" [(ngModel)]="newstorage.volumeNet" [ngModelOptions]="{standalone: true}" placeholder="Volume Net" />
+                    </mat-form-field>
+                    </div>
+                    <div class="col-md-6" class="form-outline mb-4">
+                      <mat-form-field class="example-full-width">
+                      <input matInput  type="number" [(ngModel)]="newstorage.sfps" [ngModelOptions]="{standalone: true}" placeholder="SFPs" />
+                    </mat-form-field>
+                    </div>
+                  </div>
+                  
+                  <!-- Modal Footer -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" (click)="addStorage()" >Add</button>
+                  </div>
+                  
+                </div>
+              </div>
             </div>
+            
+            <!-- Add Bootstrap JS and jQuery scripts -->
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            
+            
+          </div>
+        
             <div class="col-md-12">
                 <div class="card card-plain">
                     <div class="card-header d-flex align-items-center card-header-danger">
                         <h4 class="card-title mt-0"> Control and Network Servers</h4>
-                        <button class=" btn   icon-button ">
-                          <i class="material-icons  ">add</i>
-                         
-                        </button>
+                        
                         <p class="card-category"> </p>
                     </div>
                     <div class="card-body">
@@ -261,6 +354,12 @@
                                       <th>
                                         SFPs
                                       </th>
+                                      <th>
+                                        <button class=" btn centered-cell  btn-gray btn-sm icon-button " colspan="2" data-toggle="modal" data-target="#myModalnewcontrolnetwork">
+                                          <i class="material-icons  ">add</i>
+                                         
+                                        </button>
+                                       </th>
                                       
                                        
                                          
@@ -270,35 +369,86 @@
                                   
                                   </thead>
                                   <tbody>
-                                      <tr>
+                                      <tr *ngFor="let cn of controlnetworks">
                                           <td >
-                                            Control Node
+                                            {{cn.classOfcontrolNetwork}}
                                           </td>
                                           <td >
-                                            4
+                                            {{cn.sfps}}
                                           </td>
-                                          
-                                    
-                                          
-                                      </tr>
-                                      <tr>
-                                        <td >
-                                          Network Node
-                                        </td>
-                                        <td >
-                                          6
-                                        </td>
-                                        
-                                        
-                                    </tr>
-                                      
+                                          <div class="modal fade" id="myModaldeldeletecontrolnetwork">
+                                            <div class="modal-dialog">
+                                              <div class="modal-content">
+                                              
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                  <h4 class="modal-title gras">Delete?</h4>
+                                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                                                  <button type="button" class="btn btn-secondary"  (click)="deleteControlNetwork(idCN)" >yes</button>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <td>
+                                            <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModaldeldeletecontrolnetwork" (click)="getidCN(cn.idControlNetworkCapacities)">Delete</button>
+                                          </td>
+                                           <td>
+                                            <button class="btn btn-warning btn-sm mx-2" data-toggle="modal" data-bs-target="#basicModal2"  >Edit</button>
+                                          </td>
+                                          </tr>
                                   </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
-            </div>
+                <div class="modal fade" id="myModalnewcontrolnetwork">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                    
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title centered-cell gras">New Control Or Network node</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+                      
+                      <!-- Modal Body -->
+                      <div class="modal-body">
+                        
+                        <div class="col-md-6" class="form-outline mb-4">
+                          <mat-form-field class="example-full-width">
+                          <input matInput  type="text" [(ngModel)]="newcontrolnetwork.classOfcontrolNetwork" [ngModelOptions]="{standalone: true}" placeholder="Control Or Network node?" />
+                        </mat-form-field>
+                        </div>
+
+                        <div class="col-md-6" class="form-outline mb-4">
+                          <mat-form-field class="example-full-width">
+                          <input matInput  type="number" [(ngModel)]="newcontrolnetwork.sfps" [ngModelOptions]="{standalone: true}" placeholder="SFPs" />
+                        </mat-form-field>
+                        </div>
+                      </div>
+                      
+                      <!-- Modal Footer -->
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary"(click)="addControlNetwork()" >Add</button>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Add Bootstrap JS and jQuery scripts -->
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                
+                
+              </div>
+            
         </div>
     </div>
-  </div>
+</div>
   
