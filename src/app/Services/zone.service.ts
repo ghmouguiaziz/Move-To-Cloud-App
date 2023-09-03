@@ -7,13 +7,33 @@ import { Zone } from 'app/Models/Zone.model';
   providedIn: 'root'
 })
 export class ZoneService {
-  zone1: string;
+  
   constructor(private http : HttpClient) { }
 
   public getZones(): Observable <Zone> {
     return this.http.get<Zone> (`http://localhost:8090/data/getAllZone`);
   }
-
+  addZone(c:any){
+    return this.http.post('http://localhost:8090/data/addZone', c) ;
+  }
+  
+  deleteZone(id: any){
+    return this.http.delete('http://localhost:8090/data/deleteZone/'+id) ;
+  }
+  addAffiliate(c:any , idZ:any){
+    return this.http.post('http://localhost:8090/data/addAffiliate/'+idZ , c) ;
+  }
+  
+  deleteAffiliate(id: any){
+    return this.http.delete('http://localhost:8090/data/deleteAffiliate/'+id) ;
+  }
+  addDataCenter(c:any , idA:any){
+    return this.http.post('http://localhost:8090/data/addDataCenter/'+idA , c) ;
+  }
+  
+  deleteDataCenter(id: any){
+    return this.http.delete('http://localhost:8090/data/deleteDataCenter/'+id) ;
+  }
 }
 
 

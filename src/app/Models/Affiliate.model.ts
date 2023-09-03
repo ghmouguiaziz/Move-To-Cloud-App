@@ -1,8 +1,8 @@
 export class Affiliate { 
   idAffiliate!:any;
-  zone!:any;
-  name!:any;
   
+  name!:any;
+  fullName!:any;
   
   
   
