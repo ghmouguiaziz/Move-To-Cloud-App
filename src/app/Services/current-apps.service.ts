@@ -13,4 +13,7 @@ export class CurrentAppsService {
   public getCurrentApps(name:String): Observable <Resources> {
     return this.http.get<Resources> ("http://localhost:8090/data/getAllResourcesByDataCenter/"+ name)
  }
+ addAppOIaaS(c:any , id:any){
+  return this.http.post('http://localhost:8090/data/addResources/'+id , c) ;
+}
 }

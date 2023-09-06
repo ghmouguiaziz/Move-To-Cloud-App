@@ -6,13 +6,13 @@ export class Resources {
     bcRam!:any;
     bcNgVcpu!:any;
     bcNgRam!:any;
-    icVcpuU!:any;
+    icVcpu!:any;
     icRam!:any;
     perfStrorage!:any;
     capaStorage!:any;
-    Hypothesys!:any;
+    hypothesys!:any;
     
-    typeResource!:TypeResource;
+    type!:TypeResource;
 
   }
   export enum TypeResource {

@@ -10,8 +10,8 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead class="centered-cell">
+                            <table class="table centered-cell table-hover">
+                                <thead>
                                     <th>
                                         CPU(Cores number)
                                       </th>
@@ -45,7 +45,7 @@
                                   
                                   </thead>
                                   <tbody>
-                                      <tr *ngFor="let c of computes" class="centered-cell">
+                                      <tr *ngFor="let c of computes" >
                                           <td >
                                             {{c.cpu}}
                                           </td>
@@ -84,7 +84,7 @@
                                             </div>
                                           </div>
                                             <td><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModaldeldeletecompute" (click)="getidC(c.idComputeCapacities)" >Delete</button></td>
-                                             <td><button class="btn btn-warning btn-sm mx-2" data-toggle="modal" data-bs-target="#basicModal2"  >Edit</button></td>
+                                             <td><button class="btn btn-warning btn-sm mx-2" data-toggle="modal" data-target="#myModalupdatecompute" (click)="getupdatecompute(c)" >Edit</button></td>
                                           
                                           
                                           
@@ -157,6 +157,65 @@
                     </div>
                   </div>
                 </div>
+                <div class="modal fade" id="myModalupdatecompute">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                    
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title centered-cell gras">Update Compute</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+                      
+                      <!-- Modal Body -->
+                      <div class="modal-body">
+                        <div class="col-md-6" class="form-outline mb-4">
+                          <mat-form-field class="example-full-width">
+                          <input matInput  type="text" [(ngModel)]="updatecompute.classOfCompute" [ngModelOptions]="{standalone: true}" placeholder="classOfCompute" />
+                        </mat-form-field>
+                        </div>
+                        <div class="col-md-6" class="form-outline mb-4">
+                          <mat-form-field class="example-full-width">
+                          <input matInput  type="number" [(ngModel)]="updatecompute.cpu" [ngModelOptions]="{standalone: true}" placeholder="CPU" />
+                        </mat-form-field>
+                        </div>
+                        
+                        <div class="col-md-6" class="form-outline mb-4">
+                          <mat-form-field class="example-full-width">
+                          <input matInput  type="number" [(ngModel)]="updatecompute.cpuPc" [ngModelOptions]="{standalone: true}" placeholder="CPU(physical cores)" />
+                        </mat-form-field>
+                        </div>
+                        <div class="col-md-6" class="form-outline mb-4">
+                          <mat-form-field class="example-full-width">
+                          <input matInput  type="number" [(ngModel)]="updatecompute.ram" [ngModelOptions]="{standalone: true}" placeholder="RAM" />
+                        </mat-form-field>
+                        </div>
+                        <div class="col-md-6" class="form-outline mb-4">
+                          <mat-form-field class="example-full-width">
+                          <input matInput  type="number" [(ngModel)]="updatecompute.maxvcpu" [ngModelOptions]="{standalone: true}" placeholder="Max vCPU" />
+                        </mat-form-field>
+                        </div>
+                        <div class="col-md-6" class="form-outline mb-4">
+                          <mat-form-field class="example-full-width">
+                          <input matInput  type="number" [(ngModel)]="updatecompute.maxvram" [ngModelOptions]="{standalone: true}" placeholder="Max RAM" />
+                        </mat-form-field>
+                        </div>
+                        <div class="col-md-6" class="form-outline mb-4">
+                          <mat-form-field class="example-full-width">
+                          <input matInput  type="number" [(ngModel)]="updatecompute.sfps" [ngModelOptions]="{standalone: true}" placeholder="SFPs" />
+                        </mat-form-field>
+                        </div>
+                      </div>
+                      
+                      <!-- Modal Footer -->
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" (click)="updateCompute(updatecompute.idComputeCapacities)" >Save Changes</button>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
                 
                 <!-- Add Bootstrap JS and jQuery scripts -->
                 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -176,7 +235,7 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-hover">
+                            <table class="table centered-cell table-hover">
                                 <thead class="">
                                     <th>
                                         Range 
@@ -255,7 +314,7 @@
                                               <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModaldeldeletestorage" (click)="getidS(s.idStorageCapacities)">Delete</button>
                                             </td>
                                              <td>
-                                              <button class="btn btn-warning btn-sm mx-2" data-toggle="modal" data-bs-target="#basicModal2" (click)="update(hr)" >Edit</button>
+                                              <button class="btn btn-warning btn-sm mx-2" data-toggle="modal" data-target="#myModalupdatestorage" (click)="getupdatestorage(s)" >Edit</button>
                                             </td>
                                           
                                           
@@ -326,6 +385,65 @@
                 </div>
               </div>
             </div>
+            <div class="modal fade" id="myModalupdatestorage">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title centered-cell gras">Update Storage</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  
+                  <!-- Modal Body -->
+                  <div class="modal-body">
+                    <div class="col-md-6" class="form-outline mb-4">
+                      <mat-form-field class="example-full-width">
+                      <input matInput  type="text" [(ngModel)]="updatestorage.classOfStorage" [ngModelOptions]="{standalone: true}" placeholder="class Of Storage" />
+                    </mat-form-field>
+                    </div>
+                    <div class="col-md-6" class="form-outline mb-4">
+                      <mat-form-field class="example-full-width">
+                      <input matInput  type="number" [(ngModel)]="updatestorage.rnge" [ngModelOptions]="{standalone: true}" placeholder="Range" />
+                    </mat-form-field>
+                    </div>
+                    
+                    <div class="col-md-6" class="form-outline mb-4">
+                      <mat-form-field class="example-full-width">
+                      <input matInput  type="number" [(ngModel)]="updatestorage.diskNumber" [ngModelOptions]="{standalone: true}" placeholder="Disk Number" />
+                    </mat-form-field>
+                    </div>
+                    <div class="col-md-6" class="form-outline mb-4">
+                      <mat-form-field class="example-full-width">
+                      <input matInput  type="number" [(ngModel)]="updatestorage.diskVolume" [ngModelOptions]="{standalone: true}" placeholder="Disk Volume" />
+                    </mat-form-field>
+                    </div>
+                    <div class="col-md-6" class="form-outline mb-4">
+                      <mat-form-field class="example-full-width">
+                      <input matInput  type="number" [(ngModel)]="updatestorage.volumeBrut" [ngModelOptions]="{standalone: true}" placeholder="Volume Brut" />
+                    </mat-form-field>
+                    </div>
+                    <div class="col-md-6" class="form-outline mb-4">
+                      <mat-form-field class="example-full-width">
+                      <input matInput  type="number" [(ngModel)]="updatestorage.volumeNet" [ngModelOptions]="{standalone: true}" placeholder="Volume Net" />
+                    </mat-form-field>
+                    </div>
+                    <div class="col-md-6" class="form-outline mb-4">
+                      <mat-form-field class="example-full-width">
+                      <input matInput  type="number" [(ngModel)]="updatestorage.sfps" [ngModelOptions]="{standalone: true}" placeholder="SFPs" />
+                    </mat-form-field>
+                    </div>
+                  </div>
+                  
+                  <!-- Modal Footer -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" (click)="updateStorage(updatestorage.idStorageCapacities)" >Save Changes</button>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
             
             <!-- Add Bootstrap JS and jQuery scripts -->
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -344,7 +462,7 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-hover">
+                            <table class="table centered-cell table-hover">
                                 <thead class="">
                                     
                                       <th>
@@ -396,7 +514,7 @@
                                             <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModaldeldeletecontrolnetwork" (click)="getidCN(cn.idControlNetworkCapacities)">Delete</button>
                                           </td>
                                            <td>
-                                            <button class="btn btn-warning btn-sm mx-2" data-toggle="modal" data-bs-target="#basicModal2"  >Edit</button>
+                                            <button class="btn btn-warning btn-sm mx-2" data-toggle="modal" data-target="#myModalupdatecontrolnetwork" (click)="getupdatecontrolnetwork(cn)"  >Edit</button>
                                           </td>
                                           </tr>
                                   </tbody>
@@ -434,6 +552,41 @@
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button type="button" class="btn btn-secondary"(click)="addControlNetwork()" >Add</button>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade" id="myModalupdatecontrolnetwork">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                    
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title centered-cell gras">Update Control Or Network node</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+                      
+                      <!-- Modal Body -->
+                      <div class="modal-body">
+                        
+                        <div class="col-md-6" class="form-outline mb-4">
+                          <mat-form-field class="example-full-width">
+                          <input matInput  type="text" [(ngModel)]="updatecontrolnetwork.classOfcontrolNetwork" [ngModelOptions]="{standalone: true}" placeholder="Control Or Network node?" />
+                        </mat-form-field>
+                        </div>
+
+                        <div class="col-md-6" class="form-outline mb-4">
+                          <mat-form-field class="example-full-width">
+                          <input matInput  type="number" [(ngModel)]="updatecontrolnetwork.sfps" [ngModelOptions]="{standalone: true}" placeholder="SFPs" />
+                        </mat-form-field>
+                        </div>
+                      </div>
+                      
+                      <!-- Modal Footer -->
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary"(click)="updateControlNetwork(updatecontrolnetwork.idControlNetworkCapacities)">Save Changes</button>
                       </div>
                       
                     </div>

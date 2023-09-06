@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 import { AffiliateService } from 'app/Services/affiliate.service';
 import { ZoneService } from 'app/Services/zone.service';
 import { DataCenterService } from 'app/Services/data-center.service';
+import { Zone } from 'app/Models/Zone.model';
+import { Affiliate } from 'app/Models/Affiliate.model';
+import { DataCenter } from 'app/Models/DataCenter.model';
 
 
 @Component({
@@ -21,9 +24,12 @@ export class ZoneComponent  {
  idZ:any;
  idA:any;
  idD:any;
- newzone: { name: string } = { name: '' };
- newaff: { name: string , fullName: string } = { name: '' , fullName: '' };
- newdata: { name: string } = { name: '' };
+ newzone=new Zone();
+ newaff=new Affiliate();
+ newdata=new DataCenter();
+ updatezone=new Zone();
+ updateaff=new Affiliate();
+ updatedata=new DataCenter();
 
 
   constructor(private router: Router ,private ZoneService: ZoneService, private AffiliateService: AffiliateService, private DataCenterService: DataCenterService) { }
@@ -44,6 +50,11 @@ export class ZoneComponent  {
         
       }
     ); 
+  }
+  onSelectZoneChange(event: Event) {
+    
+    this.zone = (event.target as HTMLSelectElement).value;
+    this.getAffiliates(this.zone)
   }
   addZone(){
     
@@ -66,6 +77,12 @@ export class ZoneComponent  {
       }
     ); 
   }
+  onSelectAffChange(event: Event) {
+    
+    this.aff = (event.target as HTMLSelectElement).value;
+    this.getDataCenters(this.aff)
+    this.getAffName(this.aff)
+  }
   addAffiliate(idZ:any){
     
     this.ZoneService.addAffiliate(this.newaff, idZ).subscribe()
@@ -87,6 +104,19 @@ export class ZoneComponent  {
     );
 
     }
+    onSelectDataChange(event: Event) {
+    
+      this.data = (event.target as HTMLSelectElement).value;
+      this.confirmData()
+      
+    }
+    confirmData() {
+      {
+        this.getidData(this.data)
+        this.DataCenterService.sharedData=this.data;
+        this.DataCenterService.sharedIdData=this.idD;
+      }
+    }
     addDataCenter(idA:any){
     
       this.ZoneService.addDataCenter(this.newdata, idA).subscribe()
@@ -99,9 +129,7 @@ export class ZoneComponent  {
       window.location.reload()
     }
   confirm() {
-    if (this.data!=''){
-      this.DataCenterService.sharedData=this.data;
-    this.router.navigate(['/CurrentResources']);}
+    if (this.data!=''){this.router.navigate(['/CurrentResources']);}
   }
 
   getidZone(c:any){
@@ -109,6 +137,7 @@ export class ZoneComponent  {
       switch (z.name) {
         case c:
           this.idZ=z.idZone;
+          this.updatezone=z;
           
           
           break;
@@ -126,9 +155,11 @@ export class ZoneComponent  {
       switch (a.name) {
         case c:
           this.idA=a.idAffiliate;
-          this.affName=a.idAffiliate.fullName;
-          console.log(this.idA.fullName)
-          console.log(a.idAffiliate.fullName)
+          
+          this.updateaff=a;
+          
+
+          
           console.log(this.zones)
           
           
@@ -168,6 +199,7 @@ export class ZoneComponent  {
       switch (d.name) {
         case c:
           this.idD=d.idDataCenter;
+          this.updatedata=d
           
           break;
         
@@ -178,6 +210,19 @@ export class ZoneComponent  {
     });
         
     
+  }
+
+  updateZone(id:any){
+    this.ZoneService.updateZone(this.updatezone,id).subscribe()
+    window.location.reload();
+  }
+  updateAffiliate(id:any){
+    this.ZoneService.updateAffiliate(this.updateaff,id).subscribe()
+    window.location.reload();
+  }
+  updateDataCenter(id:any){
+    this.ZoneService.updateDataCenter(this.updatedata,id).subscribe()
+    window.location.reload();
   }
       
 

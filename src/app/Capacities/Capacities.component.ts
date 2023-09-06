@@ -14,12 +14,15 @@ export class CapacitiesComponent implements OnInit {
 computes:any;
 idC:any;
 newcompute=new ComputeCapacities();
+updatecompute=new ComputeCapacities();
 storages:any;
 idS:any;
 newstorage=new StorageCapacities();
+updatestorage=new StorageCapacities();
 controlnetworks:any;
 idCN:any;
 newcontrolnetwork=new ControlNetworkCapacities();
+updatecontrolnetwork=new ControlNetworkCapacities();
   constructor(private CapacitiesService : CapacitiesService ) { }
 
   ngOnInit(): void {
@@ -94,5 +97,29 @@ this.idC=c;
   }
   getidCN(c:any){
     this.idCN=c;
+      }
+      getupdatecompute(u:any){
+        this.updatecompute=u;
+      }
+      updateCompute(id:any){
+        this.CapacitiesService.updateCompute(this.updatecompute,id).subscribe(resp => {this.getComputesCapa();
+        })
+        window.location.reload();
+      }
+      getupdatestorage(u:any){
+        this.updatestorage=u;
+      }
+      updateStorage(id:any){
+        this.CapacitiesService.updateStorage(this.updatestorage,id).subscribe(resp => {this.getStorages();
+        })
+        window.location.reload();
+      }
+      getupdatecontrolnetwork(u:any){
+        this.updatecontrolnetwork=u;
+      }
+      updateControlNetwork(id:any){
+        this.CapacitiesService.updateControlNetwork(this.updatecontrolnetwork,id).subscribe(resp => {this.getStorages();
+        })
+        window.location.reload();
       }
 }

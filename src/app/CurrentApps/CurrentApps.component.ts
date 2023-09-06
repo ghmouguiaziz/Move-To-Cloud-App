@@ -4,6 +4,7 @@ import { CurrentAppsService } from 'app/Services/current-apps.service';
 import { Resources } from 'app/Models/CurrentApps.model'; 
 import { TypeResource } from 'app/Models/CurrentApps.model';
 
+
 @Component({
   selector: 'app-CurrentApps',
   templateUrl: './CurrentApps.component.html',
@@ -12,16 +13,15 @@ import { TypeResource } from 'app/Models/CurrentApps.model';
 export class CurrentAppsComponent implements OnInit {
 data:String=this.DataCenterService.sharedData;
 apps:any;
-appsOIaaS:Resources[]=[];
-appsPaaS:Resources[]=[];
-ress:Resources[]=[];
-ress1:Resources[]=[];
+idD:number=this.DataCenterService.sharedIdData;
+newappoiaas=new Resources()
+
   constructor(private DataCenterService: DataCenterService, private CurrentAppsService:CurrentAppsService) { }
   
   ngOnInit() {
     this.getCurrentApps(this.data);
-    this.ress1=this.apps
-    this.div(this.DataCenterService.sharedData1);
+    
+    
     
     
   }
@@ -29,34 +29,20 @@ ress1:Resources[]=[];
     
     
     this.CurrentAppsService.getCurrentApps(name).subscribe(res => {
-        this.apps=res ,this.DataCenterService.sharedData1=this.apps ;
+        this.apps=res
       }
     );
     
     
   }
-  div(ap:Resources[]) {
-    
-    console.log(this.apps);
-    console.log(this.data);
-    ap.forEach(app => {
-      switch (app.typeResource) {
-        case TypeResource.CurrAppOIaaS:
-          this.appsOIaaS.push(app);
-          break;
-        case TypeResource.CurrAppLocalPaaS:
-          this.appsPaaS.push(app);
-          break;
-        case TypeResource.CurrRessLocalPaaS:
-          this.ress.push(app);
-          break;
-        default:
-          
-          break;
-      }
-    });
-        
-    
+  addAppOIaaS(id:any){
+    this.newappoiaas.type=TypeResource.CurrAppOIaaS;
+    this.CurrentAppsService.addAppOIaaS(this.newappoiaas, id).subscribe(res => {
+      this.getCurrentApps(this.data)
+    }
+  );
+
   }
+  
 
 }

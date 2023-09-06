@@ -5,112 +5,146 @@
               <div class="card card-plain">
                   <div class="card-header d-flex align-items-center card-header-danger">
                       <h4 class="card-title mt-0">Applications WL OIaas</h4>
-                      <button class=" btn   icon-button ">
-                        <i class="material-icons  ">add</i>
-                       
-                      </button>
+                      
                       <p class="card-category"> </p>
                   </div>
                   <div class="card-body">
                       <div class="table-responsive">
-                          <table class="table table-hover">
-                              <thead class="">
-                                  <th rowspan="2">
-                                       
-                                    </th>
-                                    <th rowspan="2" >
+                        <table class="table centered-cell table-hover">
+                          <thead class="">
+                              <th>
+                              </th>
+                              <th>
+                              </th>
+                              <th>
+                              </th>
+                              <th>
+                              </th>
+                              <th>
+                              </th>
+                              <th>
+                              </th>
+                              <th>
+                              </th>
+                              <th>
+                              </th>
+                              <th>
+                              </th>
+                              <th>
+                              </th>
+                              <th>
+                              </th>
+                              <th>
+                              </th>
+                              <th>
+                              </th>
+                            </thead>
+                            <tbody>
+                              <tr class="gras">
+                                  <td rowspan="2">
+
+                                  </td>
+                                  <td rowspan="2" >
                                       Deployment Year 
-                                    </th>
-                                    <th Colspan="2">
+                                    </td>
+                                    <td Colspan="2">
                                         Basic Compute 
-                                        <tr>
-                                        <td >
-                                          vCPU
-                                        </td>
-                                        <td>
-                                          vRAM
-                                        </td>
-                                      </tr>
-                                    </th>
-                                    <th Colspan="2">
+                                        
+                                    </td>
+                                    <td Colspan="2">
                                       Basic Compute NG 
-                                      <tr>
-                                      <td >
-                                        vCPU
-                                      </td>
-                                      <td>
-                                        vRAM
-                                      </td>
-                                    </tr>
-                                  </th>
-                                  <th Colspan="2">
+                                      
+                                  </td>
+                                  <td Colspan="2">
                                     Intensive Compute 
-                                    <tr>
-                                    <td >
-                                      vCPU
-                                    </td>
-                                    <td>
-                                      vRAM
-                                    </td>
-                                  </tr>
-                                </th>
                                     
-                                    <th rowspan="2">
+                                </td>
+                                    
+                                    <td rowspan="2">
                                       Perfermane Storage(TB)
-                                    </th>
-                                    <th rowspan="2">
+                                    </td>
+                                    <td rowspan="2">
                                       Capacity Storage(TB)
-                                    </th>
-                                     <th rowspan="2">
+                                    </td>
+                                     <td rowspan="2">
                                       App. Hypothesys
                                         
-                                     </th>
+                                     </td>
                                      
+                                    <td colspan="2" rowspan="2">
+                                        <button class=" btn centered-cell  btn-gray btn-sm icon-button "   data-toggle="modal" data-target="#myModalnewappoiaas">
+                                          <i class="material-icons  ">add</i>
+                                         
+                                        </button>
+                                    </td>
+                              </tr>
+                              <tr class="gras">
+                              <td >
+                                  vCPU
+                                </td>
+                                <td>
+                                  vRAM
+                                </td>
+                                <td >
+                                  vCPU
+                                </td>
+                                <td>
+                                  vRAM
+                                </td>
+                                <td >
+                                  vCPU
+                                </td>
+                                <td>
+                                  vRAM
+                                </td>
                                 
-                                
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let a of apps">
-                                        <td >
-                                            {{a.name}} 
-                                        </td>
-                                        <td >
-                                          {{a.annee}}
-                                        </td>
-                                        <td>
-                                          {{a.bcVcpu}}
-                                        </td>
-                                        <td >
-                                          {{a.bcRam}}
-                                        </td>
-                                        <td >
-                                          {{a.bcNgVcpu}}
-                                      </td>
-                                        <td>
-                                          {{a.bcNgRam}}
-                                        </td>
-                                        <td>
-                                          {{a.icVcpuU}}
-                                        </td>
-                                        <td>
-                                          {{a.icRam}}
-                                        </td>
-                                        
-                                        <td>
-                                          {{a.perfStrorage}}
-                                        </td>
-                                        <td>
-                                          {{a.capaStorage}}
-                                        </td>
-                                        <td>
-                                          {{a.Hypothesys}}
-                                        </td>
-                                        
-                                        
-                                    </tr>
+                              </tr>
+                                <tr *ngFor="let a of apps">
+                                    <td >
+                                      {{a.name}} 
+                                    </td>
+                                    <td >
+                                      {{a.annee}}
+                                    </td>
+                                    <td>
+                                      {{a.bcVcpu}}
+                                    <td >
+                                      {{a.bcRam}}
+                                    </td>
+                                    <td >
+                                      {{a.bcNgVcpu}}
+                                  </td>
+                                    <td>
+                                      {{a.bcNgRam}}
+                                    </td>
+                                    <td>
+                                      {{a.icVcpu}}
+                                    </td>
+                                    <td>
+                                      {{a.icRam}}
+                                    </td>
                                     
-                                </tbody>
-                          </table>
+                                    <td>
+                                      {{a.perfStrorage}}
+                                    </td>
+                                    <td>
+                                      {{a.capaStorage}}
+                                    </td>
+                                    <td>
+                                      {{a.hypothesys}}
+                                    </td>
+                                    <td>
+                                      <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModaldeldelete" >Delete</button>
+                                    </td>
+                                     <td>
+                                      <button class="btn btn-warning btn-sm mx-2" data-toggle="modal" data-target="#myModalupdate"   >Edit</button>
+                                    </td>
+                                    
+                                    
+                                </tr>
+                                
+                            </tbody>
+                      </table>
                         
                       
                     
@@ -123,10 +157,7 @@
                 <div class="card card-plain">
                     <div class="card-header d-flex align-items-center card-header-danger">
                         <h4 class="card-title mt-0">Applications WL Local Paas</h4>
-                        <button class=" btn   icon-button ">
-                          <i class="material-icons  ">add</i>
-                         
-                        </button>
+                        
                         <p class="card-category"> </p>
                     </div>
                     <div class="card-body">
@@ -183,6 +214,12 @@
                                         App. Hypothesys
                                           
                                        </th>
+                                       <th>
+                                        <button class=" btn centered-cell  btn-gray btn-sm icon-button " colspan="2" data-toggle="modal" data-target="#myModalnew">
+                                          <i class="material-icons  ">add</i>
+                                         
+                                        </button>
+                                    </th>
                                        
                                   
                                   
@@ -190,7 +227,7 @@
                                   <tbody>
                                       <tr>
                                           <td >
-                                            Local Paas Infra & CS    
+                                             
                                           </td>
                                           <td >
                                             
@@ -202,10 +239,10 @@
                                             
                                         </td>
                                           <td>
-                                              96
+                                              
                                           </td>
                                           <td>
-                                              480
+                                              
                                           </td>
                                           <td>
                                               
@@ -214,58 +251,119 @@
                                               
                                           </td>
                                           <td>
-                                              6820
+                                              
+                                          </td>
+                                          <td>
+                                              
                                           </td>
                                           <td>
                                               
                                           </td>
                                           <td>
-                                              
+                                            <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModaldeldelete" >Delete</button>
+                                          </td>
+                                           <td>
+                                            <button class="btn btn-warning btn-sm mx-2" data-toggle="modal" data-target="#myModalupdate"   >Edit</button>
                                           </td>
                                           
                                           
                                       </tr>
-                                      <tr>
-                                        <td >
-                                          Local Paas Flavors capacity    
-                                        </td>
-                                        <td >
-                                          
-                                        </td>
-                                        <td >
-                                          
-                                        </td>
-                                        <td >
-                                          
-                                      </td>
-                                        <td>
-                                            8
-                                        </td>
-                                        <td>
-                                            32
-                                        </td>
-                                        <td>
-                                            
-                                        </td>
-                                        <td>
-                                            
-                                        </td>
-                                        <td>
-                                            200
-                                        </td>
-                                        <td>
-                                            
-                                        </td>
-                                        <td>
-                                            Flavor capacity
-                                        </td>
-                                        
-                                        
-                                    </tr>
+                                      
                                       
                                   </tbody>
                             </table>
                           
+                            <div class="modal fade" id="myModalnewappoiaas">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                
+                                  <!-- Modal Header -->
+                                  <div class="modal-header">
+                                    <h4 class="modal-title centered-cell gras">New Application WL OIaaS </h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  </div>
+                                  
+                                  <!-- Modal Body -->
+                                  <div class="modal-body">
+                                    
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="text" [(ngModel)]="newappoiaas.name" [ngModelOptions]="{standalone: true}" placeholder="Name" />
+                                    </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="number" [(ngModel)]="newappoiaas.annee" [ngModelOptions]="{standalone: true}" placeholder="Deployment year" />
+                                    </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="number" [(ngModel)]="newappoiaas.bcVcpu" [ngModelOptions]="{standalone: true}" placeholder="Basic compute vCPU" />
+                                    </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="number" [(ngModel)]="newappoiaas.bcRam" [ngModelOptions]="{standalone: true}" placeholder="Basic compute RAM" />
+                                    </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="number" [(ngModel)]="newappoiaas.bcNgVcpu" [ngModelOptions]="{standalone: true}" placeholder="Basic compute NG vCPU" />
+                                    </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="number" [(ngModel)]="newappoiaas.bcNgRam" [ngModelOptions]="{standalone: true}" placeholder="Basic compute NG RAM" />
+                                    </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="number" [(ngModel)]="newappoiaas.icVcpu" [ngModelOptions]="{standalone: true}" placeholder="Intensive compute vCPU" />
+                                    </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="number" [(ngModel)]="newappoiaas.icRam" [ngModelOptions]="{standalone: true}" placeholder="Intensive compute RAM" />
+                                    </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="number" [(ngModel)]="newappoiaas.perfStrorage" [ngModelOptions]="{standalone: true}" placeholder="Performance Storage" />
+                                    </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="number" [(ngModel)]="newappoiaas.capaStorage" [ngModelOptions]="{standalone: true}" placeholder="Capacity Storage" />
+                                    </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="text" [(ngModel)]="newappoiaas.hypothesys" [ngModelOptions]="{standalone: true}" placeholder="Hypothesys" />
+                                    </mat-form-field>
+                                    </div>
+                      
+                                    
+                                  </div>
+                                  
+                                  <!-- Modal Footer -->
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-secondary"(click)="addAppOIaaS(idD)" >ADD</button>
+                                  </div>
+                                  
+                                </div>
+                              </div>
+                            </div>
                         
                       
                     
@@ -277,10 +375,7 @@
                   <div class="card card-plain">
                       <div class="card-header d-flex align-items-center card-header-danger">
                           <h4 class="card-title mt-0">Applications to be hosted on Local Paas </h4>
-                          <button class=" btn   icon-button ">
-                            <i class="material-icons  ">add</i>
-                           
-                          </button>
+                          
                           <p class="card-category"> </p>
                       </div>
                       <div class="card-body">
@@ -337,6 +432,12 @@
                                           App. Hypothesys
                                             
                                          </th>
+                                         <th>
+                                          <button class=" btn centered-cell  btn-gray btn-sm icon-button " colspan="2" data-toggle="modal" data-target="#myModalnew">
+                                            <i class="material-icons  ">add</i>
+                                           
+                                          </button>
+                                      </th>
                                          
                                     
                                     
@@ -375,6 +476,12 @@
                                             </td>
                                             <td>
                                                 
+                                            </td>
+                                            <td>
+                                              <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModaldeldelete" >Delete</button>
+                                            </td>
+                                             <td>
+                                              <button class="btn btn-warning btn-sm mx-2" data-toggle="modal" data-target="#myModalupdate"   >Edit</button>
                                             </td>
                                             
                                             

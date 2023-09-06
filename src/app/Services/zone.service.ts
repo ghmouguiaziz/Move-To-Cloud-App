@@ -34,6 +34,19 @@ export class ZoneService {
   deleteDataCenter(id: any){
     return this.http.delete('http://localhost:8090/data/deleteDataCenter/'+id) ;
   }
+  updateZone(z:any ,id:any){
+    return this.http.put('http://localhost:8090/data/updateZone/'+id,z) ;
+  }
+  updateAffiliate(z:any ,id: any){
+    return this.http.put('http://localhost:8090/data/updateAffiliate/'+id,z) ;
+  }
+  updateDataCenter(z:any ,id: any){
+    return this.http.put('http://localhost:8090/data/updateDataCenter/'+id,z) ;
+  }
+
+
+
+
 }
 
 

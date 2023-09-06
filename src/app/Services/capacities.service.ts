@@ -40,4 +40,13 @@ return this.http.post('http://localhost:8090/data/addControlNetworkCapacities', 
 deleteControlNetwork(id: any){
 return this.http.delete('http://localhost:8090/data/deleteControlNetworkCapacities/'+id) ;
 }
+updateCompute( u:any,id:any){
+  return this.http.put('http://localhost:8090/data/updateComputeCapacities/'+id,u) ;
+}
+updateStorage( u:any,id:any){
+  return this.http.put('http://localhost:8090/data/updateStorageCapacities/'+id,u) ;
+}
+updateControlNetwork( u:any,id:any){
+  return this.http.put('http://localhost:8090/data/updateControlNetworkCapacities/'+id,u) ;
+}
 }

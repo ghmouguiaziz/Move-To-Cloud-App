@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class DataCenterService {
 sharedData:String;
-sharedData1:any;
+sharedIdData:any;
   constructor(private http : HttpClient) { }
 
   public getDataCenters(name:String): Observable <DataCenter> {
