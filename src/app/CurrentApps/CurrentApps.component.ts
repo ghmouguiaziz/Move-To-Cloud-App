@@ -5,20 +5,25 @@ import { Resources } from 'app/Models/CurrentApps.model';
 import { TypeResource } from 'app/Models/CurrentApps.model';
 
 
+
 @Component({
   selector: 'app-CurrentApps',
   templateUrl: './CurrentApps.component.html',
   styleUrls: ['./CurrentApps.component.css']
 })
 export class CurrentAppsComponent implements OnInit {
-data:String=this.DataCenterService.sharedData;
+data:any;
 apps:any;
-idD:number=this.DataCenterService.sharedIdData;
-newappoiaas=new Resources()
+
+idD:any;
+newapp=new Resources()
 
   constructor(private DataCenterService: DataCenterService, private CurrentAppsService:CurrentAppsService) { }
   
   ngOnInit() {
+    this.idD =localStorage.getItem('idD')
+    this.data =localStorage.getItem('data')
+    console.log(this.idD)
     this.getCurrentApps(this.data);
     
     
@@ -36,9 +41,29 @@ newappoiaas=new Resources()
     
   }
   addAppOIaaS(id:any){
-    this.newappoiaas.type=TypeResource.CurrAppOIaaS;
-    this.CurrentAppsService.addAppOIaaS(this.newappoiaas, id).subscribe(res => {
+    this.newapp.type=TypeResource.CurrAppOIaaS;
+    this.CurrentAppsService.addApp(this.newapp, id).subscribe(res => {
       this.getCurrentApps(this.data)
+      window.location.reload()
+    }
+  );
+
+  }
+  addAppPaaS(id:any){
+    this.newapp.type=TypeResource.CurrAppLocalPaaS;
+    this.CurrentAppsService.addApp(this.newapp, id).subscribe(res => {
+      this.getCurrentApps(this.data)
+      window.location.reload()
+    }
+  );
+
+  }
+
+  addAppRessPaaS(id:any){
+    this.newapp.type=TypeResource.CurrRessLocalPaaS;
+    this.CurrentAppsService.addApp(this.newapp, id).subscribe(res => {
+      this.getCurrentApps(this.data)
+      window.location.reload()
     }
   );
 

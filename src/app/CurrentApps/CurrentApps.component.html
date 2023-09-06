@@ -162,116 +162,141 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead class="">
-                                    <th rowspan="2">
-                                         
-                                      </th>
-                                      <th rowspan="2" >
+                          <table class="table centered-cell table-hover">
+                            <thead class="">
+                                <th>
+                                </th>
+                                <th>
+                                </th>
+                                <th>
+                                </th>
+                                <th>
+                                </th>
+                                <th>
+                                </th>
+                                <th>
+                                </th>
+                                <th>
+                                </th>
+                                <th>
+                                </th>
+                                <th>
+                                </th>
+                                <th>
+                                </th>
+                                <th>
+                                </th>
+                                <th>
+                                </th>
+                                <th>
+                                </th>
+                              </thead>
+                              <tbody>
+                                <tr class="gras">
+                                    <td rowspan="2">
+  
+                                    </td>
+                                    <td rowspan="2" >
                                         Deployment Year 
-                                      </th>
-                                      <th Colspan="2">
+                                      </td>
+                                      <td Colspan="2">
                                           Basic Compute 
-                                          <tr>
-                                          <td >
-                                            vCPU
-                                          </td>
-                                          <td>
-                                            vRAM
-                                          </td>
-                                        </tr>
-                                      </th>
-                                      <th Colspan="2">
+                                          
+                                      </td>
+                                      <td Colspan="2">
                                         Basic Compute NG 
-                                        <tr>
-                                        <td >
-                                          vCPU
-                                        </td>
-                                        <td>
-                                          vRAM
-                                        </td>
-                                      </tr>
-                                    </th>
-                                    <th Colspan="2">
+                                        
+                                    </td>
+                                    <td Colspan="2">
                                       Intensive Compute 
-                                      <tr>
-                                      <td >
-                                        vCPU
-                                      </td>
-                                      <td>
-                                        vRAM
-                                      </td>
-                                    </tr>
-                                  </th>
                                       
-                                      <th rowspan="2">
+                                  </td>
+                                      
+                                      <td rowspan="2">
                                         Perfermane Storage(TB)
-                                      </th>
-                                      <th rowspan="2">
+                                      </td>
+                                      <td rowspan="2">
                                         Capacity Storage(TB)
-                                      </th>
-                                       <th rowspan="2">
+                                      </td>
+                                       <td rowspan="2">
                                         App. Hypothesys
                                           
-                                       </th>
-                                       <th>
-                                        <button class=" btn centered-cell  btn-gray btn-sm icon-button " colspan="2" data-toggle="modal" data-target="#myModalnew">
-                                          <i class="material-icons  ">add</i>
-                                         
-                                        </button>
-                                    </th>
+                                       </td>
                                        
+                                      <td colspan="2" rowspan="2">
+                                          <button class=" btn centered-cell  btn-gray btn-sm icon-button "   data-toggle="modal" data-target="#myModalnewapppaas">
+                                            <i class="material-icons  ">add</i>
+                                           
+                                          </button>
+                                      </td>
+                                </tr>
+                                <tr class="gras">
+                                <td >
+                                    vCPU
+                                  </td>
+                                  <td>
+                                    vRAM
+                                  </td>
+                                  <td >
+                                    vCPU
+                                  </td>
+                                  <td>
+                                    vRAM
+                                  </td>
+                                  <td >
+                                    vCPU
+                                  </td>
+                                  <td>
+                                    vRAM
+                                  </td>
                                   
-                                  
-                                  </thead>
-                                  <tbody>
-                                      <tr>
-                                          <td >
-                                             
-                                          </td>
-                                          <td >
-                                            
-                                          </td>
-                                          <td >
-                                            
-                                          </td>
-                                          <td >
-                                            
-                                        </td>
-                                          <td>
-                                              
-                                          </td>
-                                          <td>
-                                              
-                                          </td>
-                                          <td>
-                                              
-                                          </td>
-                                          <td>
-                                              
-                                          </td>
-                                          <td>
-                                              
-                                          </td>
-                                          <td>
-                                              
-                                          </td>
-                                          <td>
-                                              
-                                          </td>
-                                          <td>
-                                            <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModaldeldelete" >Delete</button>
-                                          </td>
-                                           <td>
-                                            <button class="btn btn-warning btn-sm mx-2" data-toggle="modal" data-target="#myModalupdate"   >Edit</button>
-                                          </td>
-                                          
-                                          
-                                      </tr>
+                                </tr>
+                                  <tr *ngFor="let a of apps">
+                                      <td >
+                                        {{a.name}} 
+                                      </td>
+                                      <td >
+                                        {{a.annee}}
+                                      </td>
+                                      <td>
+                                        {{a.bcVcpu}}
+                                      <td >
+                                        {{a.bcRam}}
+                                      </td>
+                                      <td >
+                                        {{a.bcNgVcpu}}
+                                    </td>
+                                      <td>
+                                        {{a.bcNgRam}}
+                                      </td>
+                                      <td>
+                                        {{a.icVcpu}}
+                                      </td>
+                                      <td>
+                                        {{a.icRam}}
+                                      </td>
+                                      
+                                      <td>
+                                        {{a.perfStrorage}}
+                                      </td>
+                                      <td>
+                                        {{a.capaStorage}}
+                                      </td>
+                                      <td>
+                                        {{a.hypothesys}}
+                                      </td>
+                                      <td>
+                                        <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModaldeldelete" >Delete</button>
+                                      </td>
+                                       <td>
+                                        <button class="btn btn-warning btn-sm mx-2" data-toggle="modal" data-target="#myModalupdate"   >Edit</button>
+                                      </td>
                                       
                                       
-                                  </tbody>
-                            </table>
+                                  </tr>
+                                  
+                              </tbody>
+                        </table>
                           
                             <div class="modal fade" id="myModalnewappoiaas">
                               <div class="modal-dialog">
@@ -288,67 +313,67 @@
                                     
                                     <div class="col-md-6" class="form-outline mb-4">
                                       <mat-form-field class="example-full-width">
-                                      <input matInput  type="text" [(ngModel)]="newappoiaas.name" [ngModelOptions]="{standalone: true}" placeholder="Name" />
+                                      <input matInput  type="text" [(ngModel)]="newapp.name" [ngModelOptions]="{standalone: true}" placeholder="Name" />
                                     </mat-form-field>
                                     </div>
 
                                     <div class="col-md-6" class="form-outline mb-4">
                                       <mat-form-field class="example-full-width">
-                                      <input matInput  type="number" [(ngModel)]="newappoiaas.annee" [ngModelOptions]="{standalone: true}" placeholder="Deployment year" />
+                                      <input matInput  type="number" [(ngModel)]="newapp.annee" [ngModelOptions]="{standalone: true}" placeholder="Deployment year" />
                                     </mat-form-field>
                                     </div>
 
                                     <div class="col-md-6" class="form-outline mb-4">
                                       <mat-form-field class="example-full-width">
-                                      <input matInput  type="number" [(ngModel)]="newappoiaas.bcVcpu" [ngModelOptions]="{standalone: true}" placeholder="Basic compute vCPU" />
+                                      <input matInput  type="number" [(ngModel)]="newapp.bcVcpu" [ngModelOptions]="{standalone: true}" placeholder="Basic compute vCPU" />
                                     </mat-form-field>
                                     </div>
 
                                     <div class="col-md-6" class="form-outline mb-4">
                                       <mat-form-field class="example-full-width">
-                                      <input matInput  type="number" [(ngModel)]="newappoiaas.bcRam" [ngModelOptions]="{standalone: true}" placeholder="Basic compute RAM" />
+                                      <input matInput  type="number" [(ngModel)]="newapp.bcRam" [ngModelOptions]="{standalone: true}" placeholder="Basic compute RAM" />
                                     </mat-form-field>
                                     </div>
 
                                     <div class="col-md-6" class="form-outline mb-4">
                                       <mat-form-field class="example-full-width">
-                                      <input matInput  type="number" [(ngModel)]="newappoiaas.bcNgVcpu" [ngModelOptions]="{standalone: true}" placeholder="Basic compute NG vCPU" />
+                                      <input matInput  type="number" [(ngModel)]="newapp.bcNgVcpu" [ngModelOptions]="{standalone: true}" placeholder="Basic compute NG vCPU" />
                                     </mat-form-field>
                                     </div>
 
                                     <div class="col-md-6" class="form-outline mb-4">
                                       <mat-form-field class="example-full-width">
-                                      <input matInput  type="number" [(ngModel)]="newappoiaas.bcNgRam" [ngModelOptions]="{standalone: true}" placeholder="Basic compute NG RAM" />
+                                      <input matInput  type="number" [(ngModel)]="newapp.bcNgRam" [ngModelOptions]="{standalone: true}" placeholder="Basic compute NG RAM" />
                                     </mat-form-field>
                                     </div>
 
                                     <div class="col-md-6" class="form-outline mb-4">
                                       <mat-form-field class="example-full-width">
-                                      <input matInput  type="number" [(ngModel)]="newappoiaas.icVcpu" [ngModelOptions]="{standalone: true}" placeholder="Intensive compute vCPU" />
+                                      <input matInput  type="number" [(ngModel)]="newapp.icVcpu" [ngModelOptions]="{standalone: true}" placeholder="Intensive compute vCPU" />
                                     </mat-form-field>
                                     </div>
 
                                     <div class="col-md-6" class="form-outline mb-4">
                                       <mat-form-field class="example-full-width">
-                                      <input matInput  type="number" [(ngModel)]="newappoiaas.icRam" [ngModelOptions]="{standalone: true}" placeholder="Intensive compute RAM" />
+                                      <input matInput  type="number" [(ngModel)]="newapp.icRam" [ngModelOptions]="{standalone: true}" placeholder="Intensive compute RAM" />
                                     </mat-form-field>
                                     </div>
 
                                     <div class="col-md-6" class="form-outline mb-4">
                                       <mat-form-field class="example-full-width">
-                                      <input matInput  type="number" [(ngModel)]="newappoiaas.perfStrorage" [ngModelOptions]="{standalone: true}" placeholder="Performance Storage" />
+                                      <input matInput  type="number" [(ngModel)]="newapp.perfStrorage" [ngModelOptions]="{standalone: true}" placeholder="Performance Storage" />
                                     </mat-form-field>
                                     </div>
 
                                     <div class="col-md-6" class="form-outline mb-4">
                                       <mat-form-field class="example-full-width">
-                                      <input matInput  type="number" [(ngModel)]="newappoiaas.capaStorage" [ngModelOptions]="{standalone: true}" placeholder="Capacity Storage" />
+                                      <input matInput  type="number" [(ngModel)]="newapp.capaStorage" [ngModelOptions]="{standalone: true}" placeholder="Capacity Storage" />
                                     </mat-form-field>
                                     </div>
 
                                     <div class="col-md-6" class="form-outline mb-4">
                                       <mat-form-field class="example-full-width">
-                                      <input matInput  type="text" [(ngModel)]="newappoiaas.hypothesys" [ngModelOptions]="{standalone: true}" placeholder="Hypothesys" />
+                                      <input matInput  type="text" [(ngModel)]="newapp.hypothesys" [ngModelOptions]="{standalone: true}" placeholder="Hypothesys" />
                                     </mat-form-field>
                                     </div>
                       
@@ -359,6 +384,188 @@
                                   <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                     <button type="button" class="btn btn-secondary"(click)="addAppOIaaS(idD)" >ADD</button>
+                                  </div>
+                                  
+                                </div>
+                              </div>
+                            </div>
+                            <div class="modal fade" id="myModalnewapppaas">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                
+                                  <!-- Modal Header -->
+                                  <div class="modal-header">
+                                    <h4 class="modal-title centered-cell gras">New Application WL Local PaaS </h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  </div>
+                                  
+                                  <!-- Modal Body -->
+                                  <div class="modal-body">
+                                    
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="text" [(ngModel)]="newapp.name" [ngModelOptions]="{standalone: true}" placeholder="Name" />
+                                    </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="number" [(ngModel)]="newapp.annee" [ngModelOptions]="{standalone: true}" placeholder="Deployment year" />
+                                    </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="number" [(ngModel)]="newapp.bcVcpu" [ngModelOptions]="{standalone: true}" placeholder="Basic compute vCPU" />
+                                    </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="number" [(ngModel)]="newapp.bcRam" [ngModelOptions]="{standalone: true}" placeholder="Basic compute RAM" />
+                                    </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="number" [(ngModel)]="newapp.bcNgVcpu" [ngModelOptions]="{standalone: true}" placeholder="Basic compute NG vCPU" />
+                                    </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="number" [(ngModel)]="newapp.bcNgRam" [ngModelOptions]="{standalone: true}" placeholder="Basic compute NG RAM" />
+                                    </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="number" [(ngModel)]="newapp.icVcpu" [ngModelOptions]="{standalone: true}" placeholder="Intensive compute vCPU" />
+                                    </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="number" [(ngModel)]="newapp.icRam" [ngModelOptions]="{standalone: true}" placeholder="Intensive compute RAM" />
+                                    </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="number" [(ngModel)]="newapp.perfStrorage" [ngModelOptions]="{standalone: true}" placeholder="Performance Storage" />
+                                    </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="number" [(ngModel)]="newapp.capaStorage" [ngModelOptions]="{standalone: true}" placeholder="Capacity Storage" />
+                                    </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="text" [(ngModel)]="newapp.hypothesys" [ngModelOptions]="{standalone: true}" placeholder="Hypothesys" />
+                                    </mat-form-field>
+                                    </div>
+                      
+                                    
+                                  </div>
+                                  
+                                  <!-- Modal Footer -->
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-secondary"(click)="addAppPaaS(idD)" >ADD</button>
+                                  </div>
+                                  
+                                </div>
+                              </div>
+                            </div>
+                            <div class="modal fade" id="myModalnewappresspaas">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                
+                                  <!-- Modal Header -->
+                                  <div class="modal-header">
+                                    <h4 class="modal-title centered-cell gras">New Application to be hosted on Local PaaS </h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  </div>
+                                  
+                                  <!-- Modal Body -->
+                                  <div class="modal-body">
+                                    
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="text" [(ngModel)]="newapp.name" [ngModelOptions]="{standalone: true}" placeholder="Name" />
+                                    </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="number" [(ngModel)]="newapp.annee" [ngModelOptions]="{standalone: true}" placeholder="Deployment year" />
+                                    </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="number" [(ngModel)]="newapp.bcVcpu" [ngModelOptions]="{standalone: true}" placeholder="Basic compute vCPU" />
+                                    </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="number" [(ngModel)]="newapp.bcRam" [ngModelOptions]="{standalone: true}" placeholder="Basic compute RAM" />
+                                    </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="number" [(ngModel)]="newapp.bcNgVcpu" [ngModelOptions]="{standalone: true}" placeholder="Basic compute NG vCPU" />
+                                    </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="number" [(ngModel)]="newapp.bcNgRam" [ngModelOptions]="{standalone: true}" placeholder="Basic compute NG RAM" />
+                                    </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="number" [(ngModel)]="newapp.icVcpu" [ngModelOptions]="{standalone: true}" placeholder="Intensive compute vCPU" />
+                                    </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="number" [(ngModel)]="newapp.icRam" [ngModelOptions]="{standalone: true}" placeholder="Intensive compute RAM" />
+                                    </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="number" [(ngModel)]="newapp.perfStrorage" [ngModelOptions]="{standalone: true}" placeholder="Performance Storage" />
+                                    </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="number" [(ngModel)]="newapp.capaStorage" [ngModelOptions]="{standalone: true}" placeholder="Capacity Storage" />
+                                    </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6" class="form-outline mb-4">
+                                      <mat-form-field class="example-full-width">
+                                      <input matInput  type="text" [(ngModel)]="newapp.hypothesys" [ngModelOptions]="{standalone: true}" placeholder="Hypothesys" />
+                                    </mat-form-field>
+                                    </div>
+                      
+                                    
+                                  </div>
+                                  
+                                  <!-- Modal Footer -->
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-secondary"(click)="addAppRessPaaS(idD)" >ADD</button>
                                   </div>
                                   
                                 </div>
@@ -380,116 +587,141 @@
                       </div>
                       <div class="card-body">
                           <div class="table-responsive">
-                              <table class="table table-hover">
-                                  <thead class="">
-                                      <th rowspan="2">
-                                           
-                                        </th>
-                                        <th rowspan="2" >
+                            <table class="table centered-cell table-hover">
+                              <thead class="">
+                                  <th>
+                                  </th>
+                                  <th>
+                                  </th>
+                                  <th>
+                                  </th>
+                                  <th>
+                                  </th>
+                                  <th>
+                                  </th>
+                                  <th>
+                                  </th>
+                                  <th>
+                                  </th>
+                                  <th>
+                                  </th>
+                                  <th>
+                                  </th>
+                                  <th>
+                                  </th>
+                                  <th>
+                                  </th>
+                                  <th>
+                                  </th>
+                                  <th>
+                                  </th>
+                                </thead>
+                                <tbody>
+                                  <tr class="gras">
+                                      <td rowspan="2">
+    
+                                      </td>
+                                      <td rowspan="2" >
                                           Deployment Year 
-                                        </th>
-                                        <th Colspan="2">
+                                        </td>
+                                        <td Colspan="2">
                                             Basic Compute 
-                                            <tr>
-                                            <td >
-                                              vCPU
-                                            </td>
-                                            <td>
-                                              vRAM
-                                            </td>
-                                          </tr>
-                                        </th>
-                                        <th Colspan="2">
+                                            
+                                        </td>
+                                        <td Colspan="2">
                                           Basic Compute NG 
-                                          <tr>
-                                          <td >
-                                            vCPU
-                                          </td>
-                                          <td>
-                                            vRAM
-                                          </td>
-                                        </tr>
-                                      </th>
-                                      <th Colspan="2">
+                                          
+                                      </td>
+                                      <td Colspan="2">
                                         Intensive Compute 
-                                        <tr>
-                                        <td >
-                                          vCPU
-                                        </td>
-                                        <td>
-                                          vRAM
-                                        </td>
-                                      </tr>
-                                    </th>
                                         
-                                        <th rowspan="2">
+                                    </td>
+                                        
+                                        <td rowspan="2">
                                           Perfermane Storage(TB)
-                                        </th>
-                                        <th rowspan="2">
+                                        </td>
+                                        <td rowspan="2">
                                           Capacity Storage(TB)
-                                        </th>
-                                         <th rowspan="2">
+                                        </td>
+                                         <td rowspan="2">
                                           App. Hypothesys
                                             
-                                         </th>
-                                         <th>
-                                          <button class=" btn centered-cell  btn-gray btn-sm icon-button " colspan="2" data-toggle="modal" data-target="#myModalnew">
-                                            <i class="material-icons  ">add</i>
-                                           
-                                          </button>
-                                      </th>
+                                         </td>
                                          
+                                        <td colspan="2" rowspan="2">
+                                            <button class=" btn centered-cell  btn-gray btn-sm icon-button "   data-toggle="modal" data-target="#myModalnewappresspaas">
+                                              <i class="material-icons  ">add</i>
+                                             
+                                            </button>
+                                        </td>
+                                  </tr>
+                                  <tr class="gras">
+                                  <td >
+                                      vCPU
+                                    </td>
+                                    <td>
+                                      vRAM
+                                    </td>
+                                    <td >
+                                      vCPU
+                                    </td>
+                                    <td>
+                                      vRAM
+                                    </td>
+                                    <td >
+                                      vCPU
+                                    </td>
+                                    <td>
+                                      vRAM
+                                    </td>
                                     
-                                    
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td >
-                                                  
-                                            </td>
-                                            <td >
-                                              
-                                            </td>
-                                            <td >
-                                              
-                                            </td>
-                                            <td >
-                                              
-                                          </td>
-                                            <td>
-                                                
-                                            </td>
-                                            <td>
-                                                
-                                            </td>
-                                            <td>
-                                                
-                                            </td>
-                                            <td>
-                                                
-                                            </td>
-                                            <td>
-                                                
-                                            </td>
-                                            <td>
-                                                
-                                            </td>
-                                            <td>
-                                                
-                                            </td>
-                                            <td>
-                                              <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModaldeldelete" >Delete</button>
-                                            </td>
-                                             <td>
-                                              <button class="btn btn-warning btn-sm mx-2" data-toggle="modal" data-target="#myModalupdate"   >Edit</button>
-                                            </td>
-                                            
-                                            
-                                        </tr>
+                                  </tr>
+                                    <tr *ngFor="let a of apps">
+                                        <td >
+                                          {{a.name}} 
+                                        </td>
+                                        <td >
+                                          {{a.annee}}
+                                        </td>
+                                        <td>
+                                          {{a.bcVcpu}}
+                                        <td >
+                                          {{a.bcRam}}
+                                        </td>
+                                        <td >
+                                          {{a.bcNgVcpu}}
+                                      </td>
+                                        <td>
+                                          {{a.bcNgRam}}
+                                        </td>
+                                        <td>
+                                          {{a.icVcpu}}
+                                        </td>
+                                        <td>
+                                          {{a.icRam}}
+                                        </td>
+                                        
+                                        <td>
+                                          {{a.perfStrorage}}
+                                        </td>
+                                        <td>
+                                          {{a.capaStorage}}
+                                        </td>
+                                        <td>
+                                          {{a.hypothesys}}
+                                        </td>
+                                        <td>
+                                          <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModaldeldelete" >Delete</button>
+                                        </td>
+                                         <td>
+                                          <button class="btn btn-warning btn-sm mx-2" data-toggle="modal" data-target="#myModalupdate"   >Edit</button>
+                                        </td>
                                         
                                         
-                                    </tbody>
-                              </table>
+                                    </tr>
+                                    
+                                </tbody>
+                          </table>
                             
                           
                         

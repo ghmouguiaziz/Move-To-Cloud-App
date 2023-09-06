@@ -113,8 +113,8 @@ export class ZoneComponent  {
     confirmData() {
       {
         this.getidData(this.data)
-        this.DataCenterService.sharedData=this.data;
-        this.DataCenterService.sharedIdData=this.idD;
+        localStorage.setItem('data',this.data)
+        localStorage.setItem('idD',this.idD)
       }
     }
     addDataCenter(idA:any){

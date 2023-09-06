@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { MatInputModule } from '@angular/material/input';
 import { ZoneComponent } from './zone/zone.component';
 
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,
