@@ -274,10 +274,10 @@
                                   <tbody>
                                       <tr *ngFor=" let s of storages">
                                           <td >
-                                            {{s.classOfStorage}}
+                                            {{s.rnge}}
                                           </td>
                                           <td >
-                                            {{s.rnge}}
+                                            {{s.classOfStorage}}
                                           </td>
                                           <td >
                                             {{s.diskNumber}}
@@ -359,11 +359,7 @@
                       <input matInput  type="number" [(ngModel)]="newstorage.diskVolume" [ngModelOptions]="{standalone: true}" placeholder="Disk Volume" />
                     </mat-form-field>
                     </div>
-                    <div class="col-md-6" class="form-outline mb-4">
-                      <mat-form-field class="example-full-width">
-                      <input matInput  type="number" [(ngModel)]="newstorage.volumeBrut" [ngModelOptions]="{standalone: true}" placeholder="Volume Brut" />
-                    </mat-form-field>
-                    </div>
+                    
                     <div class="col-md-6" class="form-outline mb-4">
                       <mat-form-field class="example-full-width">
                       <input matInput  type="number" [(ngModel)]="newstorage.volumeNet" [ngModelOptions]="{standalone: true}" placeholder="Volume Net" />

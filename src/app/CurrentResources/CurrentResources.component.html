@@ -58,7 +58,7 @@
                                         Class of compute 
                                       </td>
                                       <td rowspan="2">
-                                          Quanity 
+                                          Quantity 
                                           
                                       </td>
                                       <td rowspan="2">
@@ -90,7 +90,7 @@
                                        </td>
                                        
                                       <td colspan="2" rowspan="2">
-                                          <button class=" btn centered-cell  btn-gray btn-sm icon-button "   data-toggle="modal" data-target="#myModalnew">
+                                          <button class=" btn centered-cell  btn-gray btn-sm icon-button "   data-toggle="modal" data-target="#myModalnewcompute">
                                             <i class="material-icons  ">add</i>
                                            
                                           </button>
@@ -123,48 +123,48 @@
                                   </td>
                                   
                                 </tr>
-                                  <tr *ngFor="let a of ">
+                                  <tr *ngFor="let a of computes ">
                                       <td >
-                                        {{a.name}} 
+                                        {{a.cpu}} 
                                       </td>
                                       <td >
-                                        {{a.annee}}
+                                        {{a.classOfCompute}}
                                       </td>
                                       <td>
-                                        {{a.bcVcpu}}
+                                        {{a.qty}}
                                       <td >
-                                        {{a.bcRam}}
+                                        {{a.vcpu}}
                                       </td>
                                       <td >
-                                        {{a.bcNgVcpu}}
+                                        {{a.vram}}
                                     </td>
                                       <td>
-                                        {{a.bcNgRam}}
+                                        {{a.sfps}}
                                       </td>
                                       <td>
-                                        {{a.icVcpu}}
+                                        {{a.bcvcpu}}
                                       </td>
                                       <td>
-                                        {{a.icRam}}
+                                        {{a.bcvram}}
                                       </td>
                                       
                                       <td>
-                                        {{a.perfStrorage}}
+                                        {{a.bcngvcpu}}
                                       </td>
                                       <td>
-                                        {{a.capaStorage}}
+                                        {{a.bcngvram}}
                                       </td>
                                       <td>
-                                        {{a.hypothesys}}
+                                        {{a.icvcpu}}
                                       </td>
                                       <td>
-                                        {{a.hypothesys}}
+                                        {{a.icvram}}
                                       </td>
                                       <td style="color: red;">
-                                        {{a.hypothesys}}
+                                        {{a.spareQty}}
                                       </td>
                                       <td style="color: red;">
-                                        {{a.hypothesys}}
+                                        {{a.sfpspare}}
                                       </td>
                                       <td>
                                         <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModaldeldelete" >Delete</button>
@@ -232,7 +232,7 @@
                                         Class of compute 
                                       </td>
                                       <td rowspan="2">
-                                          Quanity 
+                                          Quantity 
                                           
                                       </td>
                                       <td rowspan="2">
@@ -261,7 +261,7 @@
                                        </td>
                                        
                                       <td colspan="2" rowspan="2">
-                                          <button class=" btn centered-cell  btn-gray btn-sm icon-button "   data-toggle="modal" data-target="#myModalnew">
+                                          <button class=" btn centered-cell  btn-gray btn-sm icon-button "   data-toggle="modal" data-target="#myModalnewstorage">
                                             <i class="material-icons  ">add</i>
                                            
                                           </button>
@@ -289,43 +289,43 @@
                                   </td>
                                   
                                 </tr>
-                                  <tr *ngFor="let a of ">
+                                  <tr *ngFor="let a of storages">
                                       <td >
-                                        {{a.name}} 
+                                        {{a.rnge}} 
                                       </td>
                                       <td >
-                                        {{a.annee}}
+                                        {{a.classOfStorage}}
                                       </td>
                                       <td>
-                                        {{a.bcVcpu}}
+                                        {{a.qty}}
                                       <td >
-                                        {{a.bcRam}}
+                                        {{a.grossVolume}}
                                       </td>
                                       <td >
-                                        {{a.bcNgVcpu}}
+                                        {{a.netVolume}}
                                     </td>
                                       <td>
-                                        {{a.bcNgRam}}
+                                        {{a.sfps}}
                                       </td>
                                       <td>
-                                        {{a.icVcpu}}
+                                        {{a.perfGrossVolume}}
                                       </td>
                                       <td>
-                                        {{a.icRam}}
+                                        {{a.perfNetVolume}}
                                       </td>
                                       
                                       <td>
-                                        {{a.perfStrorage}}
+                                        {{a.capaGrossVolume}}
                                       </td>
                                       <td>
-                                        {{a.capaStorage}}
+                                        {{a.capaNetVolume}}
                                       </td>
                                       
                                       <td style="color: red;">
-                                        {{a.hypothesys}}
+                                        {{a.spareQty}}
                                       </td>
                                       <td style="color: red;">
-                                        {{a.hypothesys}}
+                                        {{a.sfpspare}}
                                       </td>
                                       <td>
                                         <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModaldeldelete" >Delete</button>
@@ -339,6 +339,267 @@
                                   
                               </tbody>
                         </table>
+                        <div class="modal fade" id="myModalnewcompute">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                            
+                              <!-- Modal Header -->
+                              <div class="modal-header">
+                                <h4 class="modal-title centered-cell gras">New Compute Server</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              </div>
+                              
+                              <!-- Modal Body -->
+                              <div class="modal-body">
+                                
+                                <div class="col-md-6" class="form-outline mb-4">
+                                  <mat-form-field class="example-full-width">
+                                  <input matInput  type="text" [(ngModel)]="newcompute.classOfCompute" [ngModelOptions]="{standalone: true}" placeholder="Class of compute" />
+                                </mat-form-field>
+                                </div>
+
+                                <div class="col-md-6" class="form-outline mb-4">
+                                  <mat-form-field class="example-full-width">
+                                  <input matInput  type="number" [(ngModel)]="newcompute.cpu" [ngModelOptions]="{standalone: true}" placeholder="CPU" />
+                                </mat-form-field>
+                                </div>
+
+                                <div class="col-md-6" class="form-outline mb-4">
+                                  <mat-form-field class="example-full-width">
+                                  <input matInput  type="number" [(ngModel)]="newcompute.qty" [ngModelOptions]="{standalone: true}" placeholder="Quantity" />
+                                </mat-form-field>
+                                </div>
+
+                                <div class="col-md-6" class="form-outline mb-4">
+                                  <mat-form-field class="example-full-width">
+                                  <input matInput  type="number" [(ngModel)]="newcompute.vcpu" [ngModelOptions]="{standalone: true}" placeholder="vCPU" />
+                                </mat-form-field>
+                                </div>
+
+                                <div class="col-md-6" class="form-outline mb-4">
+                                  <mat-form-field class="example-full-width">
+                                  <input matInput  type="number" [(ngModel)]="newcompute.vram" [ngModelOptions]="{standalone: true}" placeholder="vRAM" />
+                                </mat-form-field>
+                                </div>
+
+                              
+
+                                <div class="col-md-6" class="form-outline mb-4">
+                                  <mat-form-field class="example-full-width">
+                                  <input matInput  type="number" [(ngModel)]="newcompute.bcvcpu" [ngModelOptions]="{standalone: true}" placeholder="Basic compute vCPU" />
+                                </mat-form-field>
+                                </div>
+
+                                <div class="col-md-6" class="form-outline mb-4">
+                                  <mat-form-field class="example-full-width">
+                                  <input matInput  type="number" [(ngModel)]="newcompute.bcvram" [ngModelOptions]="{standalone: true}" placeholder="Basic compute vRAM" />
+                                </mat-form-field>
+                                </div>
+
+                                <div class="col-md-6" class="form-outline mb-4">
+                                  <mat-form-field class="example-full-width">
+                                  <input matInput  type="number" [(ngModel)]="newcompute.bcngvcpu" [ngModelOptions]="{standalone: true}" placeholder="Basic compute NG vCPU" />
+                                </mat-form-field>
+                                </div>
+
+                                <div class="col-md-6" class="form-outline mb-4">
+                                  <mat-form-field class="example-full-width">
+                                  <input matInput  type="number" [(ngModel)]="newcompute.bcngvram" [ngModelOptions]="{standalone: true}" placeholder="Basic compute NG vRAM" />
+                                </mat-form-field>
+                                </div>
+
+                                <div class="col-md-6" class="form-outline mb-4">
+                                  <mat-form-field class="example-full-width">
+                                  <input matInput  type="number" [(ngModel)]="newcompute.icvcpu" [ngModelOptions]="{standalone: true}" placeholder="Intensive compute vCPU" />
+                                </mat-form-field>
+                                </div>
+
+                                <div class="col-md-6" class="form-outline mb-4">
+                                  <mat-form-field class="example-full-width">
+                                  <input matInput  type="number" [(ngModel)]="newcompute.icvram" [ngModelOptions]="{standalone: true}" placeholder="Intensive compute vRAM" />
+                                </mat-form-field>
+                                </div>
+
+                                <div class="col-md-6" class="form-outline mb-4">
+                                  <mat-form-field class="example-full-width">
+                                  <input matInput  type="number" [(ngModel)]="newcompute.spareQty" [ngModelOptions]="{standalone: true}" placeholder="spare servers Quantity " />
+                                </mat-form-field>
+                                </div>
+
+                                
+                  
+                                
+                              </div>
+                              
+                              <!-- Modal Footer -->
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary"(click)="addComputeAva(idD)" >ADD</button>
+                              </div>
+                              
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal fade" id="myModalnewstorage">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                            
+                              <!-- Modal Header -->
+                              <div class="modal-header">
+                                <h4 class="modal-title centered-cell gras">New Storage Server</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              </div>
+                              
+                              <!-- Modal Body -->
+                              <div class="modal-body">
+                                
+                                <div class="col-md-6" class="form-outline mb-4">
+                                  <mat-form-field class="example-full-width">
+                                  <input matInput  type="text" [(ngModel)]="newstorage.classOfStorage" [ngModelOptions]="{standalone: true}" placeholder="Class of compute" />
+                                </mat-form-field>
+                                </div>
+
+                                <div class="col-md-6" class="form-outline mb-4">
+                                  <mat-form-field class="example-full-width">
+                                  <input matInput  type="number" [(ngModel)]="newstorage.rnge" [ngModelOptions]="{standalone: true}" placeholder="Range" />
+                                </mat-form-field>
+                                </div>
+
+                                <div class="col-md-6" class="form-outline mb-4">
+                                  <mat-form-field class="example-full-width">
+                                  <input matInput  type="number" [(ngModel)]="newstorage.qty" [ngModelOptions]="{standalone: true}" placeholder="Quantity" />
+                                </mat-form-field>
+                                </div>
+
+                                <div class="col-md-6" class="form-outline mb-4">
+                                  <mat-form-field class="example-full-width">
+                                  <input matInput  type="number" [(ngModel)]="newstorage.grossVolume" [ngModelOptions]="{standalone: true}" placeholder="Gross Volume" />
+                                </mat-form-field>
+                                </div>
+
+                                <div class="col-md-6" class="form-outline mb-4">
+                                  <mat-form-field class="example-full-width">
+                                  <input matInput  type="number" [(ngModel)]="newstorage.netVolume" [ngModelOptions]="{standalone: true}" placeholder="Net Volume" />
+                                </mat-form-field>
+                                </div>
+
+                              
+
+                                <div class="col-md-6" class="form-outline mb-4">
+                                  <mat-form-field class="example-full-width">
+                                  <input matInput  type="number" [(ngModel)]="newstorage.perfGrossVolume" [ngModelOptions]="{standalone: true}" placeholder="Perfermance Net Volume" />
+                                </mat-form-field>
+                                </div>
+
+                                <div class="col-md-6" class="form-outline mb-4">
+                                  <mat-form-field class="example-full-width">
+                                  <input matInput  type="number" [(ngModel)]="newstorage.perfNetVolume" [ngModelOptions]="{standalone: true}" placeholder="Perfermance Net Volume" />
+                                </mat-form-field>
+                                </div>
+
+                                <div class="col-md-6" class="form-outline mb-4">
+                                  <mat-form-field class="example-full-width">
+                                  <input matInput  type="number" [(ngModel)]="newstorage.capaGrossVolume" [ngModelOptions]="{standalone: true}" placeholder="Capacity Gross Volume" />
+                                </mat-form-field>
+                                </div>
+
+                                <div class="col-md-6" class="form-outline mb-4">
+                                  <mat-form-field class="example-full-width">
+                                  <input matInput  type="number" [(ngModel)]="newstorage.capaNetVolume" [ngModelOptions]="{standalone: true}" placeholder="Capacity Net Volume" />
+                                </mat-form-field>
+                                </div>
+
+                                
+
+                                <div class="col-md-6" class="form-outline mb-4">
+                                  <mat-form-field class="example-full-width">
+                                  <input matInput  type="number" [(ngModel)]="newstorage.spareQty" [ngModelOptions]="{standalone: true}" placeholder="spare servers Quantity " />
+                                </mat-form-field>
+                                </div>
+
+                                
+
+                                
+
+                                
+                  
+                                
+                              </div>
+                              
+                              <!-- Modal Footer -->
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary"(click)="addStorageAva(idD)" >ADD</button>
+                              </div>
+                              
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal fade" id="myModalnewcontrolnetwork">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                            
+                              <!-- Modal Header -->
+                              <div class="modal-header">
+                                <h4 class="modal-title centered-cell gras">New Control or Network Server</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              </div>
+                              
+                              <!-- Modal Body -->
+                              <div class="modal-body">
+                                
+                                <div class="col-md-6" class="form-outline mb-4">
+                                  <mat-form-field class="example-full-width">
+                                  <input matInput  type="text" [(ngModel)]="newcontrolnetwork.classOfControlNetwork" [ngModelOptions]="{standalone: true}" placeholder="Class of compute" />
+                                </mat-form-field>
+                                </div>
+
+                                
+
+                                <div class="col-md-6" class="form-outline mb-4">
+                                  <mat-form-field class="example-full-width">
+                                  <input matInput  type="number" [(ngModel)]="newcontrolnetwork.qty" [ngModelOptions]="{standalone: true}" placeholder="Quantity" />
+                                </mat-form-field>
+                                </div>
+
+                                <div class="col-md-6" class="form-outline mb-4">
+                                  <mat-form-field class="example-full-width">
+                                  <input matInput  type="number" [(ngModel)]="newcontrolnetwork.sfps" [ngModelOptions]="{standalone: true}" placeholder="SFPs" />
+                                </mat-form-field>
+                                </div>
+
+                                <div class="col-md-6" class="form-outline mb-4">
+                                  <mat-form-field class="example-full-width">
+                                  <input matInput  type="number" [(ngModel)]="newcontrolnetwork.spareQty" [ngModelOptions]="{standalone: true}" placeholder="spare servers Quantity " />
+                                </mat-form-field>
+                                </div>
+
+                                <div class="col-md-6" class="form-outline mb-4">
+                                  <mat-form-field class="example-full-width">
+                                  <input matInput  type="number" [(ngModel)]="newcontrolnetwork.sfpspare" [ngModelOptions]="{standalone: true}" placeholder=" spare server SFPs " />
+                                </mat-form-field>
+                                </div>
+
+                                
+
+                                
+
+                                
+
+                                
+                  
+                                
+                              </div>
+                              
+                              <!-- Modal Footer -->
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary"(click)="addControlNetworkAva(idD)" >ADD</button>
+                              </div>
+                              
+                            </div>
+                          </div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -352,78 +613,72 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-hover ">
+                            <table class="table centered-cell table-hover ">
                                 <thead>
+                                  <th>
+                                  </th>
+                                  <th>
+                                  </th>
+                                  <th>
+                                  </th>
+                                  <th>
+                                  </th>
+                                  <th>
+                                  </th>
+                                  <th>
+                                  </th>
+                                  <th>
+                                  </th>
+                                  </thead>
+                                  <tbody>
+                                    <tr class="gras">
                                     
-                                      <th rowspan="2" >
-                                        Class Of Compute 
-                                      </th>
-                                      <th rowspan="2">
-                                          Quantity 
-                                      </th>
-                                      <th rowspan="2">
-                                        SFPs
-                                      </th>
-                                       <th colspan="2">
-                                          Servers Spare
-                                          <tr>
-                                          <td>
-                                           Quantity
-                                           </td>
-                                           <td>
-                                           SFPs
-                                            </td>
-                                           </tr>  
-                                       </th>
-                                       <th>
-                                        <button class=" btn centered-cell  btn-gray btn-sm icon-button " colspan="2" data-toggle="modal" data-target="#myModalnew">
+                                    <td rowspan="2" >
+                                      Class Of Compute 
+                                    </td>
+                                    <td rowspan="2">
+                                        Quantity 
+                                    </td>
+                                    <td rowspan="2">
+                                      SFPs
+                                    </td>
+                                     <td colspan="2" style="color: red;">
+                                        Servers Spare
+                                      </td>
+                                      <td colspan="2" rowspan="2">
+                                        <button class=" btn centered-cell  btn-gray btn-sm icon-button " colspan="2" data-toggle="modal" data-target="#myModalnewcontrolnetwork">
                                           <i class="material-icons  ">add</i>
                                          
                                         </button>
-                                    </th>
-                                  
-                                  
-                                  </thead>
-                                  <tbody>
-                                      <tr>
-                                          <td >
-                                            Control Node
+                                    </td>
+                                    </tr>
+                                        <tr class="gras">
+                                        <td style="color: red;">
+                                         Quantity
+                                         </td>
+                                         <td style="color: red;">
+                                         SFPs
                                           </td>
-                                          <td >
-                                            4
-                                          </td>
-                                          <td >
-                                            16
-                                          </td>
-                                          <td >
-                                            0
-                                        </td>
-                                          <td>
-                                              0
-                                          </td>
-                                          <td>
-                                            <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModaldeldelete" >Delete</button>
-                                          </td>
-                                           <td>
-                                            <button class="btn btn-warning btn-sm mx-2" data-toggle="modal" data-target="#myModalupdate"   >Edit</button>
-                                          </td>
-                                          
-                                      </tr>
-                                      <tr>
+                                         </tr>  
+                                        
+                                     
+                                    
+                                
+                                      <tr *ngFor="let a of controlnetworks">
                                         <td >
-                                          Network Node
+                                          {{a.classOfControlNetwork}}
                                         </td>
                                         <td >
-                                          3
+                                          {{a.qty}}
                                         </td>
                                         <td >
-                                          18
+                                          {{a.sfps}}
                                         </td>
-                                        <td >
-                                          0
+                                        <td style="color: red;" >
+                                          {{a.spareQty}}
                                       </td>
-                                        <td>
-                                            0
+                                        <td style="color: red;">
+                                            {{a.sfpspare}}
                                         </td>
                                         <td>
                                           <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModaldeldelete" >Delete</button>

@@ -60,7 +60,7 @@ this.idC=c;
     ); 
   }
   addStorage(){
-    
+    this.newstorage.volumeBrut=this.newstorage.diskNumber*this.newstorage.diskVolume;
     this.CapacitiesService.addStorage(this.newstorage).subscribe()
     
     window.location.reload()

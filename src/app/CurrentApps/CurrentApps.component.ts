@@ -13,8 +13,9 @@ import { TypeResource } from 'app/Models/CurrentApps.model';
 })
 export class CurrentAppsComponent implements OnInit {
 data:any;
-apps:any;
-
+oiaas:any;
+paas:any;
+resspaas:any;
 idD:any;
 newapp=new Resources()
 
@@ -33,8 +34,14 @@ newapp=new Resources()
   getCurrentApps(name:String){
     
     
-    this.CurrentAppsService.getCurrentApps(name).subscribe(res => {
-        this.apps=res
+    this.CurrentAppsService.getCurrentApps('CurrAppOIaaS',name).subscribe(res => {
+        this.oiaas=res
+      });
+      this.CurrentAppsService.getCurrentApps('CurrAppLocalPaaS',name).subscribe(res => {
+        this.paas=res
+      });
+      this.CurrentAppsService.getCurrentApps('CurrRessLocalPaaS',name).subscribe(res => {
+        this.resspaas=res
       }
     );
     
@@ -42,32 +49,25 @@ newapp=new Resources()
   }
   addAppOIaaS(id:any){
     this.newapp.type=TypeResource.CurrAppOIaaS;
-    this.CurrentAppsService.addApp(this.newapp, id).subscribe(res => {
-      this.getCurrentApps(this.data)
+    this.CurrentAppsService.addApp(this.newapp, id).subscribe()
       window.location.reload()
     }
-  );
-
-  }
+  
   addAppPaaS(id:any){
     this.newapp.type=TypeResource.CurrAppLocalPaaS;
-    this.CurrentAppsService.addApp(this.newapp, id).subscribe(res => {
-      this.getCurrentApps(this.data)
+    this.CurrentAppsService.addApp(this.newapp, id).subscribe()
       window.location.reload()
     }
-  );
-
-  }
+  
 
   addAppRessPaaS(id:any){
     this.newapp.type=TypeResource.CurrRessLocalPaaS;
-    this.CurrentAppsService.addApp(this.newapp, id).subscribe(res => {
-      this.getCurrentApps(this.data)
+    this.CurrentAppsService.addApp(this.newapp, id).subscribe()
       window.location.reload()
     }
-  );
+  
 
   }
   
 
-}
+
