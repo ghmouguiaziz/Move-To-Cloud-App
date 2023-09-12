@@ -84,10 +84,7 @@
                                         Intensive Compute
                                           
                                        </td>
-                                       <td style="color: red;" colspan="2">
-                                        Servers Spare
-                                          
-                                       </td>
+                                       
                                        
                                       <td colspan="2" rowspan="2">
                                           <button class=" btn centered-cell  btn-gray btn-sm icon-button "   data-toggle="modal" data-target="#myModalnewcompute">
@@ -115,12 +112,7 @@
                                   <td>
                                     vRAM
                                   </td>
-                                  <td style="color: red;">
-                                    Quantity
-                                  </td>
-                                  <td style="color: red;">
-                                    SFPs
-                                  </td>
+                                  
                                   
                                 </tr>
                                   <tr *ngFor="let a of computes ">
@@ -160,12 +152,7 @@
                                       <td>
                                         {{a.icvram}}
                                       </td>
-                                      <td style="color: red;">
-                                        {{a.spareQty}}
-                                      </td>
-                                      <td style="color: red;">
-                                        {{a.sfpspare}}
-                                      </td>
+                                      
                                       <td>
                                         <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModaldeldelete" >Delete</button>
                                       </td>
@@ -177,6 +164,35 @@
                                   </tr>
                                   
                               </tbody>
+                        </table>
+                        <table class="table centered-cell table-hover">
+                          <thead>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                          </thead>
+                          <body>
+                            <tr class="gras">
+                              <td rowspan="2">CPU</td>
+                              <td rowspan="2">Class Of Compute</td>
+                              <td colspan="2">servers spare</td>
+
+                            </tr>
+                            <tr class="gras">
+                              <td >Quantity</td>
+                              <td >SFPs</td>
+                              
+
+                            </tr>
+                            <tr *ngFor="let a of computes ">
+                              <td>{{a.cpu}} </td>
+                              <td>{{a.classOfCompute}}</td>
+                              <td>{{a.spareQty}}</td>
+                              <td>{{a.sfpspare}}</td>
+                            </tr>
+                          </body>
+
                         </table>
                         </div>
                     </div>
@@ -339,6 +355,7 @@
                                   
                               </tbody>
                         </table>
+                        
                         <div class="modal fade" id="myModalnewcompute">
                           <div class="modal-dialog">
                             <div class="modal-content">

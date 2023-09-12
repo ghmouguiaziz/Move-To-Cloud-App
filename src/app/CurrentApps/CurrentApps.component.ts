@@ -25,22 +25,22 @@ newapp=new Resources()
     this.idD =localStorage.getItem('idD')
     this.data =localStorage.getItem('data')
     console.log(this.idD)
-    this.getCurrentApps(this.data);
+    this.getCurrentApps(this.idD);
     
     
     
     
   }
-  getCurrentApps(name:String){
+  getCurrentApps(id:any){
     
     
-    this.CurrentAppsService.getCurrentApps('CurrAppOIaaS',name).subscribe(res => {
+    this.CurrentAppsService.getCurrentApps('CurrAppOIaaS',id).subscribe(res => {
         this.oiaas=res
       });
-      this.CurrentAppsService.getCurrentApps('CurrAppLocalPaaS',name).subscribe(res => {
+      this.CurrentAppsService.getCurrentApps('CurrAppLocalPaaS',id).subscribe(res => {
         this.paas=res
       });
-      this.CurrentAppsService.getCurrentApps('CurrRessLocalPaaS',name).subscribe(res => {
+      this.CurrentAppsService.getCurrentApps('CurrRessLocalPaaS',id).subscribe(res => {
         this.resspaas=res
       }
     );

@@ -26,17 +26,17 @@ newcontrolnetwork=new EnvControlNetwork()
     this.idD =localStorage.getItem('idD')
     this.data =localStorage.getItem('data')
     console.log(this.idD)
-    this.getComputes(this.data);
-    this.getStorages(this.data);
-    this.getControlNetworks(this.data);
+    this.getComputes(this.idD);
+    this.getStorages(this.idD);
+    this.getControlNetworks(this.idD);
     
     
     
   }
-  getComputes(name:String){
+  getComputes(id:any){
     
     
-    this.RessService.getComputes( 'required',name).subscribe(res => {
+    this.RessService.getComputes( 'required',id).subscribe(res => {
         this.computes=res
       }
     );
@@ -52,10 +52,10 @@ newcontrolnetwork=new EnvControlNetwork()
       window.location.reload()
     }
     
-    getStorages(name:String){
+    getStorages(id:any){
     
     
-      this.RessService.getStorages( 'required',name).subscribe(res => {
+      this.RessService.getStorages( 'required',id).subscribe(res => {
           this.storages=res
         }
       );
@@ -70,10 +70,10 @@ newcontrolnetwork=new EnvControlNetwork()
       this.RessService.addStorage(this.newstorage, id).subscribe();
         window.location.reload()
       }
-      getControlNetworks(name:String){
+      getControlNetworks(id:any){
     
     
-        this.RessService.getControlNetworks( 'required',name).subscribe(res => {
+        this.RessService.getControlNetworks( 'required',id).subscribe(res => {
             this.controlnetworks=res
           }
         );

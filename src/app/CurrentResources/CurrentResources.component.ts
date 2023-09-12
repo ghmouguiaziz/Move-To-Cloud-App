@@ -25,17 +25,17 @@ newcontrolnetwork=new EnvControlNetwork()
   this.idD =localStorage.getItem('idD')
   this.data =localStorage.getItem('data')
   console.log(this.idD)
-  this.getComputes(this.data);
-  this.getStorages(this.data);
-  this.getControlNetworks(this.data);
+  this.getComputes(this.idD);
+  this.getStorages(this.idD);
+  this.getControlNetworks(this.idD);
   
   
   
 }
-getComputes(name:String){
+getComputes(id:any){
   
   
-  this.RessService.getComputes( 'available',name).subscribe(res => {
+  this.RessService.getComputes( 'available',id).subscribe(res => {
       this.computes=res
     }
   );
@@ -51,10 +51,10 @@ addComputeAva(id:any){
     window.location.reload()
   }
   
-  getStorages(name:String){
+  getStorages(id:any){
   
   
-    this.RessService.getStorages( 'available',name).subscribe(res => {
+    this.RessService.getStorages( 'available',id).subscribe(res => {
         this.storages=res
       }
     );
@@ -69,10 +69,10 @@ addComputeAva(id:any){
     this.RessService.addStorage(this.newstorage, id).subscribe();
       window.location.reload()
     }
-    getControlNetworks(name:String){
+    getControlNetworks(id:any){
   
   
-      this.RessService.getControlNetworks( 'available',name).subscribe(res => {
+      this.RessService.getControlNetworks( 'available',id).subscribe(res => {
           this.controlnetworks=res
         }
       );

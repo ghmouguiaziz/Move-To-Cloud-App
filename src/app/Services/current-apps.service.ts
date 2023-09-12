@@ -10,8 +10,8 @@ export class CurrentAppsService {
 
   constructor(private http : HttpClient) { }
 
-  public getCurrentApps( t:any,name:String): Observable <Resources> {
-    return this.http.get<Resources> ('http://localhost:8090/data/findByType/'+t+'/'+ name)
+  public getCurrentApps( t:any,id:any): Observable <Resources> {
+    return this.http.get<Resources> ('http://localhost:8090/data/findByType/'+t+'/'+ id)
  }
  addApp(c:any , id:any){
   return this.http.post('http://localhost:8090/data/addResources/'+id , c) ;
