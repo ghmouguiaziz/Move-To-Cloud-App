@@ -10,7 +10,7 @@
                   </div>
                   <div class="card-body">
                       <div class="table-responsive">
-                          <table class="table">
+                          <table class="table centered-cell">
                               <thead class=" text-primary">
                                   <th>
                                     Type of nodes 
@@ -27,76 +27,29 @@
                                   <th>
                                     OInnov Price(1year)
                                 </th>
-                                <th>
-                                  <button class=" btn centered-cell  btn-gray btn-sm icon-button " colspan="2" data-toggle="modal" data-target="#myModalnew">
+                                <th colspan="2">
+                                  <button class=" btn   btn-gray btn-sm icon-button "  data-toggle="modal" data-target="#myModalnewlicense">
                                     <i class="material-icons  ">add</i>
                                    
                                   </button>
                               </th>
                               </thead>
                               <tbody>
-                                  <tr>
+                                  <tr *ngFor="let a of licenses">
                                       <td>
-                                        Network Node
+                                        {{a.nodeType}}
                                       </td>
                                       <td>
-                                        RHOSP with Guest OS "Premium licenses"
+                                        {{a.sub}}
                                       </td>
                                       <td>
-                                        MCT2886
+                                        {{a.sku}}
                                       </td>
-                                      <td class="text-primary">
-                                        $36,738
+                                      <td >
+                                        {{a.redhatPrice}}
                                     </td>
-                                      <td class="text-primary">
-                                          $36,738
-                                      </td>
-                                      <td>
-                                        <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModaldeldelete" >Delete</button>
-                                      </td>
-                                       <td>
-                                        <button class="btn btn-warning btn-sm mx-2" data-toggle="modal" data-target="#myModalupdate"   >Edit</button>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>
-                                        Ceph Storage, Standard
-                                      </td>
-                                      <td>
-                                        Up to 256TB, 12 Physical Nodes
-                                      </td>
-                                      <td>
-                                        MCT2735
-                                      </td>
-                                      <td class="text-primary">
-                                        $23,789
-                                    </td>
-                                      
-                                      <td class="text-primary">
-                                        $23,789
-                                    </td>
-                                    <td>
-                                      <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModaldeldelete" >Delete</button>
-                                    </td>
-                                     <td>
-                                      <button class="btn btn-warning btn-sm mx-2" data-toggle="modal" data-target="#myModalupdate"   >Edit</button>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                      <td>
-                                        Ceph Storage, Premium
-                                      </td>
-                                      <td>
-                                        Up to 1PB, 50 Physical Nodes
-                                      </td>
-                                      <td>
-                                        RS00061
-                                      </td>
-                                      <td class="text-primary">
-                                        $56,142
-                                    </td>
-                                      <td class="text-primary">
-                                          $56,142
+                                      <td >
+                                        {{a.oinnovPrice}}
                                       </td>
                                       <td>
                                         <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModaldeldelete" >Delete</button>
@@ -105,77 +58,66 @@
                                         <button class="btn btn-warning btn-sm mx-2" data-toggle="modal" data-target="#myModalupdate"   >Edit</button>
                                       </td>
                                   </tr>
-                                  <tr>
-                                    <td>
-                                      Ceph Storage, Premium
-                                    </td>
-                                    <td>
-                                        Up to 512TB, 25 Physical Nodes
-                                    </td>
-                                    <td>
-                                        RS00060
-                                    </td>
-                                    <td class="text-primary">
-                                      $46,142
-                                  </td>
-                                    <td class="text-primary">
-                                        $46,142
-                                    </td>
-                                    <td>
-                                      <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModaldeldelete" >Delete</button>
-                                    </td>
-                                     <td>
-                                      <button class="btn btn-warning btn-sm mx-2" data-toggle="modal" data-target="#myModalupdate"   >Edit</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                      Ceph Storage, Premium
-                                    </td>
-                                    <td>
-                                        CEPH 25
-                                    </td>
-                                    <td>
-                                        CEPH 25
-                                    </td>
-                                    <td class="text-primary">
-                                      $36,142
-                                  </td>
-                                    <td class="text-primary">
-                                        $36,142
-                                    </td>
-                                    <td>
-                                      <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModaldeldelete" >Delete</button>
-                                    </td>
-                                     <td>
-                                      <button class="btn btn-warning btn-sm mx-2" data-toggle="modal" data-target="#myModalupdate"   >Edit</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                      Ceph Storage, Premium
-                                    </td>
-                                    <td>
-                                      Up to 1PB, 50 Physical Nodes
-                                    </td>
-                                    <td>
-                                      RS00061
-                                    </td>
-                                    <td class="text-primary">
-                                      $56,142
-                                  </td>
-                                    <td class="text-primary">
-                                        $56,142
-                                    </td>
-                                    <td>
-                                      <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModaldeldelete" >Delete</button>
-                                    </td>
-                                     <td>
-                                      <button class="btn btn-warning btn-sm mx-2" data-toggle="modal" data-target="#myModalupdate"   >Edit</button>
-                                    </td>
-                                </tr>
+                                  
                               </tbody>
                           </table>
+                          <div class="modal fade" id="myModalnewlicense">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                              
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                  <h4 class="modal-title centered-cell gras">New License  </h4>
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                
+                                <!-- Modal Body -->
+                                <div class="modal-body">
+                                  
+                                  <div class="col-md-6" class="form-outline mb-4">
+                                    <mat-form-field class="example-full-width">
+                                    <input matInput  type="text" [(ngModel)]="new.nodeType" [ngModelOptions]="{standalone: true}" placeholder="Name" />
+                                  </mat-form-field>
+                                  </div>
+          
+                                  <div class="col-md-6" class="form-outline mb-4">
+                                    <mat-form-field class="example-full-width">
+                                    <input matInput  type="number" [(ngModel)]="new.redhatPrice" [ngModelOptions]="{standalone: true}" placeholder="RedHat Price" />
+                                  </mat-form-field>
+                                  </div>
+          
+                                  <div class="col-md-6" class="form-outline mb-4">
+                                    <mat-form-field class="example-full-width">
+                                    <input matInput  type="number" [(ngModel)]="new.oinnovPrice" [ngModelOptions]="{standalone: true}" placeholder="OInnov Price" />
+                                  </mat-form-field>
+                                  </div>
+
+                                  <div class="col-md-6" class="form-outline mb-4">
+                                    <mat-form-field class="example-full-width">
+                                    <input matInput  type="text" [(ngModel)]="new.sku" [ngModelOptions]="{standalone: true}" placeholder="SKU" />
+                                  </mat-form-field>
+                                  </div>
+
+                                  <div class="col-md-6" class="form-outline mb-4">
+                                    <mat-form-field class="example-full-width">
+                                    <input matInput  type="text" [(ngModel)]="new.sub" [ngModelOptions]="{standalone: true}" placeholder="Subscriptions required" />
+                                  </mat-form-field>
+                                  </div>
+          
+                                  
+                    
+                                  
+                                </div>
+                                
+                                <!-- Modal Footer -->
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button type="button" class="btn btn-secondary"(click)="addLicense()" >ADD</button>
+                                </div>
+                                
+                              </div>
+                            </div>
+                          </div>
                       </div>
                   </div>
               </div>

@@ -115,6 +115,10 @@ export class ZoneComponent  {
         this.getidData(this.data)
         localStorage.setItem('data',this.data)
         localStorage.setItem('idD',this.idD)
+        localStorage.setItem('zone',this.zone)
+        localStorage.setItem('aff',this.aff)
+        localStorage.setItem('affName',this.affName)
+        
       }
     }
     addDataCenter(idA:any){

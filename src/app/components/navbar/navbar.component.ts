@@ -9,11 +9,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+    zone:any;
+    aff:any;
+    affName:any;
+    data:any;
     private listTitles: any[];
     location: Location;
       mobile_menu_visible: any = 0;
     private toggleButton: any;
     private sidebarVisible: boolean;
+
+
 
     constructor(location: Location,  private element: ElementRef, private router: Router) {
       this.location = location;
@@ -110,6 +116,12 @@ export class NavbarComponent implements OnInit {
     };
 
     getTitle(){
+
+        this.zone=localStorage.getItem('zone')
+        this.aff=localStorage.getItem('aff')
+        this.affName=localStorage.getItem('affName')
+        this.data=localStorage.getItem('data')
+
       var titlee = this.location.prepareExternalUrl(this.location.path());
       if(titlee.charAt(0) === '#'){
           titlee = titlee.slice( 1 );
